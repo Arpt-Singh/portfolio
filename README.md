@@ -49,7 +49,7 @@ policy. The tilt component now uses React 18-compatible `react-tilt` 1.x and its
 named `Tilt` export.
 Turborepo builds the shared contracts first, then runs:
 
-- Frontend: Vite at `http://localhost:5173` (or the next available port).
+- Frontend: Vite at `http://localhost:5173/portfolio/` (or the next available port).
 - Backend: Node HTTP server at `http://127.0.0.1:3001`.
 - Interface: TypeScript watch mode to rebuild shared contracts when they change.
 
@@ -392,6 +392,8 @@ BrowserRouter
 
 This is one scrolling page, not a set of separate page routes. The navbar uses
 hash anchors for sections and a router `Link` for the home action.
+`BrowserRouter` uses `import.meta.env.BASE_URL` as its basename, so the home
+action stays under `/portfolio/`.
 
 ### Step 4: Separate portfolio data from presentation
 
@@ -738,8 +740,9 @@ All three components below are defined in
 
 ### `ComputersCanvas`: canvas and loading lifecycle
 
-- `WORKSPACE_MODEL` points to `/desktop_pc/workstation01/scene.glb`.
-- `WORKSPACE_PREVIEW` points to `/desktop_pc/workstation01/textures/workstation01.png`.
+- `WORKSPACE_MODEL` points to `/portfolio/desktop_pc/workstation01/scene.glb`.
+- `WORKSPACE_PREVIEW` points to `/portfolio/desktop_pc/workstation01/textures/workstation01.png`.
+- Both use `import.meta.env.BASE_URL`, supplied by Vite's `/portfolio/` base.
 - `useGLTF.preload` starts loading the model ahead of component rendering.
 - `ready` begins false, so an eager, high-priority PNG appears over the canvas.
 - The preview is scaled by `0.9803921569`, approximately `1 / 1.02`, matching
@@ -945,10 +948,12 @@ copied without hashed names. For example:
 
 ```text
 Disk: apps/frontend/public/desktop_pc/workstation01/scene.glb
-URL:  /desktop_pc/workstation01/scene.glb
+URL:  /portfolio/desktop_pc/workstation01/scene.glb
 ```
 
 Do not include `public/` in the browser URL.
+Public asset references in TypeScript use `import.meta.env.BASE_URL`; the HTML
+favicon and preload use `%BASE_URL%`. Vite handles imported bundled assets.
 
 Files imported from [src/assets/](./apps/frontend/src/assets/) are processed by
 Vite and usually receive hashed production names. The employer logo is imported
@@ -1014,7 +1019,7 @@ npm run build
 | Frontend URL is not 5173 | Vite normally chooses the next available port. Read the URL printed in its output. |
 | API proxy fails while the portfolio works | The page uses local content, but the health client requires a running backend. Check the configured `HOST`/`PORT` and backend terminal output. |
 | Invalid `PORT` stops startup | Use an integer from 1 through 65535. Empty or nonnumeric values are not accepted. |
-| GLB or preview returns 404 | Check both files in the workstation public directory and request their root-relative URLs without `/public`. |
+| GLB or preview returns 404 | Check both files in the workstation public directory and include the `/portfolio/` URL prefix, without `/public`. |
 | New image is cropped or mismatched | Regenerate both assets together. For artwork not using 3:2 proportions, review hero aspect ratio and camera-fit height as described above. |
 | Generator cannot read an image | Pass a readable PNG file path after `--`; JPEGs are not accepted. The command overwrites generated outputs. |
 | WebGL does not render | Check browser hardware acceleration, WebGL support, asset requests, and console errors. The PNG is a loading preview, not a complete error-recovery system. |
@@ -1035,7 +1040,8 @@ npm run dev
 
 ### GitHub Pages
 
-For this repository's root URL, `https://arpt-singh.github.io/`, use the
+For the `Arpt-Singh/portfolio` project site at
+`https://arpt-singh.github.io/portfolio/`, use the
 [Pages deployment workflow](./.github/workflows/deploy-pages.yml).
 
 1. In the GitHub repository, open **Settings > Pages**.
@@ -1044,7 +1050,7 @@ For this repository's root URL, `https://arpt-singh.github.io/`, use the
 3. Commit and push the workflow and project files to `main`.
 4. Open **Actions > Deploy portfolio to GitHub Pages** and wait for both the
    build and deployment jobs to succeed. You can also use **Run workflow**.
-5. Reload `https://arpt-singh.github.io/` after deployment completes.
+5. Reload `https://arpt-singh.github.io/portfolio/` after deployment completes.
 
 The workflow installs from the root lockfile, builds the frontend and shared
 contracts through Turborepo, and uploads **only `apps/frontend/dist/`**.
@@ -1056,7 +1062,9 @@ GitHub Pages hosts static files only: it does not run this project's Node
 backend, and `/api/health` will not work there without a separate API deployment
 and corresponding client configuration. The portfolio itself does not call the
 API automatically, so its content and direct-email contact link work without it.
-The current root-relative assets and default Vite base match this user-site URL.
+The Vite base is `/portfolio/`. Publish this build to `Arpt-Singh/portfolio`,
+not the root user-site repository. Git remote changes and pushes are separate
+steps; changing the frontend base does not change the repository destination.
 
 ### Local production smoke test
 
@@ -1079,7 +1087,7 @@ In terminal B, preview the frontend:
 npm run preview -- --host 127.0.0.1 --port 4173 --strictPort
 ```
 
-Visit `http://127.0.0.1:4173` and
+Visit `http://127.0.0.1:4173/portfolio/` and
 `http://127.0.0.1:4173/api/health`. Preview forwards the health request to the
 backend on its default port. If the backend uses another `PORT`, supply the same
 environment value to the preview command. Stop both commands with `Ctrl+C`.
@@ -1097,9 +1105,8 @@ hosting solution.
 The backend does not serve the frontend build. Vite's proxy settings do not
 become part of static files. Configure a production reverse proxy so
 `/api/health` reaches Node before the SPA fallback catches it. The frontend
-currently assumes root hosting through absolute model/icon paths and the
-default Vite base; deploying under a URL subdirectory requires coordinated
-base-path and asset-path changes.
+uses `/portfolio/` as its base for routing and static assets. If the deployment
+path changes, update the Vite base and verify routing and asset loading again.
 
 Keep the backend bound to loopback when a reverse proxy runs on the same host.
 In container environments, an intentional `HOST=0.0.0.0` may be necessary;

@@ -4,7 +4,7 @@ import { About, Contact, Experience, Feedbacks, Hero, Navbar, Works, StarsCanvas
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className='relative z-0 bg-primary'>
         <div className='hero-backdrop'>
           <Navbar />

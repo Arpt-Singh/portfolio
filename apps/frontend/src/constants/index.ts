@@ -30,12 +30,12 @@ const services = [
   },
   {
     title: "Rust & Systems Programming",
-    icon: "/technology-icons/rust.svg",
+    icon: `${import.meta.env.BASE_URL}technology-icons/rust.svg`,
     technologies: ["Rust", "IPC", "gRPC", "Async", "File I/O", "Protocol Design"],
   },
   {
     title: "Embedded Linux & OS Architecture",
-    icon: "/technology-icons/linux.svg",
+    icon: `${import.meta.env.BASE_URL}technology-icons/linux.svg`,
     technologies: ["Linux", "Yocto", "OpenEmbedded", "BitBake", "Weston", "systemd"],
   },
   {

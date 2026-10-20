@@ -3,8 +3,8 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Box3, Mesh, PerspectiveCamera, Vector3 } from "three";
 
-const WORKSPACE_MODEL = "/desktop_pc/workstation01/scene.glb";
-const WORKSPACE_PREVIEW = "/desktop_pc/workstation01/textures/workstation01.png";
+const WORKSPACE_MODEL = `${import.meta.env.BASE_URL}desktop_pc/workstation01/scene.glb`;
+const WORKSPACE_PREVIEW = `${import.meta.env.BASE_URL}desktop_pc/workstation01/textures/workstation01.png`;
 const MODEL_SCALE = 1.35;
 
 const CanvasSizer = () => {

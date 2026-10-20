@@ -40,8 +40,9 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt='logo' className='brand-mark h-11 w-11 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer'>
-            Arpit Systems
+          <p className='text-white text-[18px] font-bold cursor-pointer flex'>
+            Arpit &nbsp;
+            <span className='sm:block hidden'> | Rustaceans</span>
           </p>
         </Link>
 

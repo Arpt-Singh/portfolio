@@ -8,6 +8,7 @@ const proxy = {
 }
 
 export default defineConfig({
+  base: '/portfolio/',
   plugins: [react()],
   server: {
     proxy,
