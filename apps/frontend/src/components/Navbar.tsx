@@ -41,7 +41,7 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='brand-mark h-11 w-11 shrink-0 object-contain' />
           <p className='text-white text-[14px] sm:text-[18px] font-bold cursor-pointer'>
-            Arpit | NITian @NIT-Rourkela | System Design
+            Arpit | NITian @NIT-Rourkela
           </p>
         </Link>
 
