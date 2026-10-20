@@ -1033,6 +1033,31 @@ npm run dev
 
 ## Production deployment
 
+### GitHub Pages
+
+For this repository's root URL, `https://arpt-singh.github.io/`, use the
+[Pages deployment workflow](./.github/workflows/deploy-pages.yml).
+
+1. In the GitHub repository, open **Settings > Pages**.
+2. Under **Build and deployment > Source**, select **GitHub Actions**, not
+   **Deploy from a branch**.
+3. Commit and push the workflow and project files to `main`.
+4. Open **Actions > Deploy portfolio to GitHub Pages** and wait for both the
+   build and deployment jobs to succeed. You can also use **Run workflow**.
+5. Reload `https://arpt-singh.github.io/` after deployment completes.
+
+The workflow installs from the root lockfile, builds the frontend and shared
+contracts through Turborepo, and uploads **only `apps/frontend/dist/`**.
+Publishing the repository root instead can cause Pages to render this README
+because the root has no site `index.html`. Do not move the source HTML entry to
+the root or commit build outputs to work around that problem.
+
+GitHub Pages hosts static files only: it does not run this project's Node
+backend, and `/api/health` will not work there without a separate API deployment
+and corresponding client configuration. The portfolio itself does not call the
+API automatically, so its content and direct-email contact link work without it.
+The current root-relative assets and default Vite base match this user-site URL.
+
 ### Local production smoke test
 
 Build once from the root:
