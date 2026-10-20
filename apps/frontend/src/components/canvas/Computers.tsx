@@ -2,6 +2,7 @@ import React, { Suspense, useCallback, useEffect, useMemo, useRef, useState } fr
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Box3, Mesh, PerspectiveCamera, Vector3 } from "three";
+import { CanvasErrorBoundary, WebGLContextGuard } from "./CanvasErrorBoundary";
 
 const WORKSPACE_MODEL = `${import.meta.env.BASE_URL}desktop_pc/workstation01/scene.glb`;
 const WORKSPACE_PREVIEW = `${import.meta.env.BASE_URL}desktop_pc/workstation01/textures/workstation01.png`;
@@ -50,8 +51,17 @@ const WorkspaceModel = ({ onReady }: { onReady: () => void }) => {
   const { scene } = useGLTF(WORKSPACE_MODEL);
   const { gl, invalidate } = useThree();
   const rendered = useRef(false);
+  const [renderError, setRenderError] = useState<Error | null>(null);
   useFrame((state) => {
-    state.gl.render(state.scene, state.camera);
+    if (renderError) return;
+    try {
+      state.gl.render(state.scene, state.camera);
+    } catch (error) {
+      // Frame callbacks run outside React, so rethrow through the next render.
+      setRenderError(error instanceof Error ? error : new Error(String(error)));
+      return;
+    }
+    if (state.gl.getContext().isContextLost()) return;
     if (!rendered.current) {
       rendered.current = true;
       onReady();
@@ -81,6 +91,8 @@ const WorkspaceModel = ({ onReady }: { onReady: () => void }) => {
     invalidate();
   }, [gl, scene, invalidate]);
 
+  if (renderError) throw renderError;
+
   return (
     <group scale={MODEL_SCALE * model.scale}>
       <primitive object={scene} position={model.position} />
@@ -88,46 +100,66 @@ const WorkspaceModel = ({ onReady }: { onReady: () => void }) => {
   );
 };
 
+const WorkstationImage = () => (
+  <img
+    src={WORKSPACE_PREVIEW}
+    alt=""
+    aria-hidden="true"
+    loading="eager"
+    fetchpriority="high"
+    className="absolute inset-0 z-10 h-full w-full object-contain"
+    style={{ transform: "scale(0.9803921569)" }}
+  />
+);
+
+const WorkstationFallback = () => (
+  <>
+    <WorkstationImage />
+    <p role="status" className="absolute inset-x-0 bottom-8 z-20 text-center text-sm text-secondary">
+      3D view unavailable. Showing the workstation image.
+    </p>
+  </>
+);
+
 const ComputersCanvas = () => {
   const [ready, setReady] = useState(false);
   const handleReady = useCallback(() => setReady(true), []);
+  const handleError = useCallback(() => setReady(false), []);
 
   return (
     <div className="relative h-full w-full" data-workspace-ready={ready}>
-      {!ready && (
-        <img
-          src={WORKSPACE_PREVIEW}
-          alt=""
-          aria-hidden="true"
-          loading="eager"
-          fetchpriority="high"
-          className="absolute inset-0 z-10 h-full w-full object-contain"
-          style={{ transform: "scale(0.9803921569)" }}
-        />
-      )}
-      <Canvas
-    frameloop={ready ? "demand" : "always"}
-    dpr={[1, 2]}
-    style={{ width: "100%", height: "100%" }}
-    camera={{ position: [0, 0, 6], fov: 35, near: 0.1, far: 100 }}
-    gl={{ preserveDrawingBuffer: true, antialias: true }}
-  >
-    <CanvasSizer />
-    <Suspense fallback={null}>
-      <ambientLight intensity={1.5} />
-      <directionalLight position={[0, 1, 5]} intensity={1.2} />
-      <WorkspaceModel onReady={handleReady} />
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        enableDamping
-        dampingFactor={0.06}
-        minPolarAngle={Math.PI / 2}
-        maxPolarAngle={Math.PI / 2}
-      />
-    </Suspense>
-    <Preload all />
-  </Canvas>
+      <CanvasErrorBoundary
+        name="Workstation 3D view"
+        fallback={<WorkstationFallback />}
+        onError={handleError}
+      >
+        {!ready && <WorkstationImage />}
+        <Canvas
+          fallback={<WorkstationFallback />}
+          frameloop={ready ? "demand" : "always"}
+          dpr={[1, 2]}
+          style={{ width: "100%", height: "100%" }}
+          camera={{ position: [0, 0, 6], fov: 35, near: 0.1, far: 100 }}
+          gl={{ antialias: true }}
+        >
+          <WebGLContextGuard />
+          <CanvasSizer />
+          <Suspense fallback={null}>
+            <ambientLight intensity={1.5} />
+            <directionalLight position={[0, 1, 5]} intensity={1.2} />
+            <WorkspaceModel onReady={handleReady} />
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              enableDamping
+              dampingFactor={0.06}
+              minPolarAngle={Math.PI / 2}
+              maxPolarAngle={Math.PI / 2}
+            />
+          </Suspense>
+          <Preload all />
+        </Canvas>
+      </CanvasErrorBoundary>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { random } from "maath";
 import type { Points as ThreePoints } from "three";
+import { CanvasErrorBoundary, WebGLContextGuard } from "./CanvasErrorBoundary";
 
 const Stars = () => {
   const ref = useRef<ThreePoints>(null);
@@ -36,13 +37,16 @@ const Stars = () => {
 const StarsCanvas = () => {
   return (
     <div className='pointer-events-none w-full h-auto absolute inset-0 z-[-1]' aria-hidden='true'>
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Suspense fallback={null}>
-          <Stars />
-        </Suspense>
+      <CanvasErrorBoundary name="Decorative star field" fallback={null}>
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <WebGLContextGuard />
+          <Suspense fallback={null}>
+            <Stars />
+          </Suspense>
 
-        <Preload all />
-      </Canvas>
+          <Preload all />
+        </Canvas>
+      </CanvasErrorBoundary>
     </div>
   );
 };
