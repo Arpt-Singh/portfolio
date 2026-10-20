@@ -33,20 +33,19 @@ const Navbar = () => {
       <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center'>
         <Link
           to='/'
-          className='flex items-center gap-2'
+          className='flex min-w-0 items-center gap-2'
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='brand-mark h-11 w-11 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex'>
-            Arpit &nbsp;
-            <span className='lg:block hidden'> | System Design</span>
+          <img src={logo} alt='logo' className='brand-mark h-11 w-11 shrink-0 object-contain' />
+          <p className='text-white text-[14px] sm:text-[18px] font-bold cursor-pointer'>
+            Arpit | System Design
           </p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden lg:flex flex-row gap-10'>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -60,7 +59,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='lg:hidden flex shrink-0 justify-end items-center ml-3'>
           <img
             src={toggle ? close : menu}
             alt='menu'
