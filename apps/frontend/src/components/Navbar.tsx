@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { logo } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -60,17 +60,26 @@ const Navbar = () => {
         </ul>
 
         <div className='lg:hidden flex shrink-0 justify-end items-center ml-3'>
-          <img
-            src={toggle ? close : menu}
-            alt='menu'
-            className='w-[28px] h-[28px] object-contain'
-            onClick={() => setToggle(!toggle)}
-          />
+          <button
+            type='button'
+            aria-label={toggle ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={toggle}
+            aria-controls='mobile-navigation'
+            onClick={() => setToggle((open) => !open)}
+            className='project-focus relative flex h-11 w-11 items-center justify-center rounded-lg border border-secondary/40 text-white'
+          >
+            <span aria-hidden='true' className='relative block h-5 w-6'>
+              <span className={`absolute left-0 top-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-200 motion-reduce:transition-none ${toggle ? "translate-y-[9px] rotate-45" : ""}`} />
+              <span className={`absolute left-0 top-[9px] h-0.5 w-6 rounded-full bg-current transition-opacity duration-200 motion-reduce:transition-none ${toggle ? "opacity-0" : ""}`} />
+              <span className={`absolute left-0 top-[18px] h-0.5 w-6 rounded-full bg-current transition-transform duration-200 motion-reduce:transition-none ${toggle ? "-translate-y-[9px] -rotate-45" : ""}`} />
+            </span>
+          </button>
 
           <div
+            id='mobile-navigation'
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 bg-primary absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (
