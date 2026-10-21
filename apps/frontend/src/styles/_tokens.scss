@@ -1,17 +1,18 @@
 :root {
-  --color-primary: #050816;
-  --color-secondary: #aaa6c3;
-  --color-tertiary: #151030;
-  --color-accent: #915eff;
+  --color-primary: #030c26;
+  --color-primary-rgb: 3 12 38;
+  --color-secondary: #b0bfd4;
+  --color-tertiary: #0b1b36;
+  --color-accent: #62d9ff;
   --color-cyan: #62d9ff;
   --color-text: #fff;
-  --color-card-hover: #251e43;
+  --color-card-hover: #11294a;
   --color-border: rgb(255 255 255 / 10%);
-  --color-border-muted: rgb(170 166 195 / 40%);
-  --color-border-accent: rgb(145 94 255 / 40%);
-  --color-border-accent-soft: rgb(145 94 255 / 30%);
+  --color-border-muted: rgb(176 191 212 / 40%);
+  --color-border-accent: rgb(98 217 255 / 40%);
+  --color-border-accent-soft: rgb(98 217 255 / 30%);
   --gradient-card: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  --card-shadow: 0 35px 120px -15px #211e35;
+  --card-shadow: 0 35px 120px -15px #02091c;
   --font-family: "Poppins", sans-serif;
   --font-size-caption: 12px;
   --font-size-small: 14px;

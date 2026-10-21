@@ -126,7 +126,8 @@ const projects = [
   {
     name: "Oscillatory Motion Analysis",
     icon: serviceSymbol("M2 12c3-14 5 14 8 0s5 14 8 0h4M4 21h16M4 3v18"),
-    description: "Developed a measurement and signal-processing workflow to estimate angular acceleration from changing velocity, supporting experimental analysis of oscillatory motion and transient torque and power requirements.",
+    description: "Built a measurement pipeline for oscillatory motor motion, where speed readings alone could not explain changes in acceleration, torque, and power.",
+    solution: "Connected NI-DAQmx data acquisition to LabVIEW and MATLAB analysis. Separated signal collection, filtering, and acceleration estimation into stages, then checked the results against experimental measurements.",
     flow: [
       { name: "Measurement", detail: "Acquire motion signals from the experimental setup.", link: "Sampled signals" },
       { name: "Signal Analysis", detail: "Filter signals and estimate angular acceleration.", link: "Motion estimates" },
@@ -143,7 +144,8 @@ const projects = [
   {
     name: "Modular Embedded Systems Architecture",
     icon: serviceSymbol("M6 6h12v12H6zM9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"),
-    description: "Designed a reusable embedded framework from scratch, separating real-time device control, typed host services, and test software through defined component interfaces and concurrency boundaries.",
+    description: "Designed a shared embedded framework so multiple test applications could use the same device-control software and host interfaces instead of separate implementations.",
+    solution: "Split the system into Python test clients, typed Rust host services, and Embedded C firmware. Defined Protobuf/gRPC contracts, RTOS concurrency boundaries, and reusable CMake modules to keep test logic separate from communication and real-time control.",
     flow: [
       { name: "Test Software", detail: "Build reusable commands and client interfaces.", link: "Typed requests" },
       { name: "Host Services", detail: "Separate service contracts from transport-specific code.", link: "Device commands" },
@@ -160,7 +162,8 @@ const projects = [
   {
     name: "Model-Based Sensor Calibration",
     icon: serviceSymbol("M4 3v18h17M7 17l4-6 4 2 5-8M7 15l13-9"),
-    description: "Combined experimental characterization, statistical analysis, and mathematical modeling to compensate for nonlinear sensor response, with calibration software integrated into embedded processing.",
+    description: "Developed sensor-calibration software to handle nonlinear sensor response and support consistent input-output behavior.",
+    solution: "Worked with my technical Fellow to build a flow from experimental measurements to statistical analysis, a mathematical calibration model, and embedded processing. Used the model to compensate for sensor response in software.",
     flow: [
       { name: "Characterization", detail: "Collect measurements and analyze sensor response.", link: "Measurement data" },
       { name: "Model Development", detail: "Develop a mathematical calibration relationship.", link: "Calibration model" },
@@ -177,7 +180,8 @@ const projects = [
   {
     name: "Generative ML for Signal Evaluation",
     icon: serviceSymbol("M4 5h4v4H4zM16 5h4v4h-4zM10 16h4v4h-4zM6 9l6 7 6-7M8 7h8"),
-    description: "Developed synthetic signal-generation software with preprocessing, model training, and statistical signal comparison to support evaluation of classification models in a two-person research team.",
+    description: "Built a synthetic-signal pipeline to provide additional evaluation data for signal-classification research.",
+    solution: "Worked in a two-person team to separate preprocessing, model training, signal generation, and evaluation. Used Python, PyTorch, and MATLAB to run reproducible experiments and compare generated signals with reference data through statistical analysis.",
     flow: [
       { name: "Signal Preparation", detail: "Preprocess reference signals for research experiments.", link: "Prepared signals" },
       { name: "Model Training", detail: "Train software to generate synthetic evaluation signals.", link: "Generated signals" },
@@ -194,7 +198,8 @@ const projects = [
   {
     name: "Multi-Touch Gesture Classification",
     icon: serviceSymbol("M8 14V6a2 2 0 0 1 4 0v6-8a2 2 0 0 1 4 0v9l3-3 3 3-6 8H10l-7-7 3-3 2 3"),
-    description: "Developed touch-interaction classification using motion analysis and linear algebra, integrating Rust processing with a Tauri application to distinguish pinch gestures and suppress unintended interface scaling.",
+    description: "Built a touch-classification service to prevent valid multi-touch interactions from triggering unwanted pinch-to-zoom in a desktop application.",
+    solution: "Used motion analysis and linear algebra to classify touch input in Rust. Connected the service to Tauri gesture handling through gRPC, separating touch analysis from UI behavior so classification results could control zoom suppression.",
     flow: [
       { name: "Touch Input", detail: "Process multi-touch interactions from a capacitive display.", link: "Touch input" },
       { name: "Rust Classification Service", detail: "Distinguish pinch gestures from other touch interactions.", link: "Classification result" },
@@ -212,7 +217,8 @@ const projects = [
     name: "Full-Stack Desktop Systems Architecture",
     icon: serviceSymbol("M2 3h20v12H2zM2 7h20M8 20h8M12 15v5M6 10l2 2-2 2m12-4-2 2 2 2"),
     featuredTechnologies: ["React", "Rust", "SQLite"],
-    description: "Designed component-based interfaces, recursive change detection, and Rust application services with SQLite persistence, Diesel schema migrations, and JSON-based database seeding. Applied explicit state transitions and data-driven calculations for cross-layer consistency.",
+    description: "Designed desktop application components that keep editable configuration, runtime state, and stored data consistent across React views, Rust services, and SQLite.",
+    solution: "Separated reusable UI components, Zustand state, typed Tauri commands, and Diesel persistence. Added recursive change detection, schema migrations, and shared control rules, then checked state transitions and numerical boundaries through regression tests and hardware evaluation.",
     flow: [
       { name: "React / TypeScript", detail: "Component-based views, shared styles, SVG graphics, and multilingual input.", link: "State updates" },
       { name: "Zustand / API Clients", detail: "Separate editable configuration from runtime state; detect nested changes.", link: "Tauri commands" },

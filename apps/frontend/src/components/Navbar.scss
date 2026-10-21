@@ -4,7 +4,7 @@
 .navbar--scrolled { background: var(--color-primary); }
 .navbar__container { @include mixins.container; display: flex; justify-content: space-between; align-items: center; padding-inline: var(--space-4); }
 .navbar__brand { display: flex; min-width: 0; align-items: center; gap: 8px; }
-.navbar__logo { @include mixins.square(44px); flex-shrink: 0; object-fit: contain; filter: brightness(1.7) drop-shadow(0 0 7px rgb(145 78 255 / 50%)); }
+.navbar__logo { @include mixins.square(44px); flex-shrink: 0; object-fit: contain; }
 .navbar__name { min-width: 0; font-size: clamp(10px, 2.8vw, 14px); font-weight: 700; line-height: 1.5; }
 .navbar__title, .navbar__subtitle { display: block; }
 .navbar__subtitle { font-size: .85em; font-weight: 500; color: var(--color-secondary); }

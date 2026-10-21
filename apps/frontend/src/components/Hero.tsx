@@ -6,10 +6,6 @@ const Hero = () => (
     <div className="hero__shade" />
     <div className="hero__intro">
       <div className="hero__copy">
-        <div className="hero__marker">
-          <div className="hero__dot" />
-          <div className="hero__line" />
-        </div>
         <div className="hero__text">
           <h1 className="hero__heading">Hi, I'm <span>Arpit</span></h1>
           <p className="hero__description">
