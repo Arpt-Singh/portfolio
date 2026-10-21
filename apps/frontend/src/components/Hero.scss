@@ -7,7 +7,7 @@
 .hero__text { min-width: 0; text-shadow: 0 2px 10px rgb(var(--color-primary-rgb) / 78%); }
 .hero__heading { margin-top: 8px; font-size: 40px; font-weight: 900; line-height: 1.5; }
 .hero__heading span { color: var(--color-text); }
-.hero__description { margin-top: 20px; font-size: 16px; line-height: 28px; color: #c3cde0; }
+.hero__description { margin-top: 20px; font-size: 16px; line-height: 28px; color: var(--color-text); }
 .hero__scene {
   position: relative; width: 100%; aspect-ratio: 3 / 2; margin-top: 8px; pointer-events: none;
   animation: hero-float 9s ease-in-out infinite;

@@ -1,13 +1,14 @@
 @use "../styles/mixins";
 
-.about__description { margin-top: var(--space-4); width: 100%; max-width: 768px; color: var(--color-secondary); font-size: 19px; line-height: 32px; }
+.about__header .section-subheading { color: var(--color-text); }
+.about__description { margin-top: var(--space-4); width: 100%; max-width: 768px; color: var(--color-text); font-size: 19px; line-height: 32px; }
 .about__grid { display: grid; grid-auto-rows: 1fr; gap: var(--space-6); margin-top: 80px; }
 .about__card { min-width: 0; border-radius: var(--radius-card); }
 .about__card-content { display: flex; flex-direction: column; align-items: center; gap: var(--space-5); height: 100%; min-height: 360px; padding: var(--space-5); border-radius: var(--radius-card); background: var(--color-tertiary); }
 .about__icon { @include mixins.square(var(--icon-size)); object-fit: contain; }
-.about__card-title { font-size: var(--font-size-card-title); font-weight: 700; text-align: center; }
+.about__card-title { font-size: var(--font-size-card-title); font-weight: 600; text-align: center; }
 .about__technologies { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); list-style: none; }
-.about__technology { @include mixins.badge; }
+.about__technology { @include mixins.badge; color: var(--color-text); }
 @include mixins.up(sm) {
   .about__description { font-size: 21px; line-height: 36px; }
   .about__grid { @include mixins.columns(2); }

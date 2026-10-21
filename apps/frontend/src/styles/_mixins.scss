@@ -66,7 +66,7 @@ $breakpoints: (
 @mixin badge {
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-pill);
-  background: var(--color-primary);
+  background: var(--color-tag-background);
   font-size: var(--font-size-caption);
   color: var(--color-secondary);
 }

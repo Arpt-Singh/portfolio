@@ -10,16 +10,11 @@ const ExperienceCard = ({ experience }: { experience: (typeof experiences)[numbe
     <article className="experience__card">
       <h3 className="experience__title">{experience.title}</h3>
       <p className="experience__focus">{experience.focus}</p>
-      <ul className="experience__points">
-        {experience.points.map((point, index) => {
-          const label = point.match(/^(Responsibility|Research|Design contribution|Technologies|Achievement):/);
-          return (
-            <li key={`experience-point-${index}`}>
-              {label ? <><strong>{label[0]}</strong>{point.slice(label[0].length)}</> : point}
-            </li>
-          );
-        })}
-      </ul>
+      <div className="experience__summary">
+        {experience.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
       <div className="experience__employer">
         <a href={employer.url} target="_blank" rel="noopener noreferrer"
           aria-label={`Visit ${employer.name} (opens in a new tab)`}>

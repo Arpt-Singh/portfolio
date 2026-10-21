@@ -8,9 +8,6 @@ const Works = () => (
       <p className="section-subheading">Research & engineering</p>
       <h2 className="section-heading">Projects.</h2>
     </header>
-    <p className="works__description">
-      Selected research and engineering projects.
-    </p>
     <div className="works__grid">
       {[...projects].reverse().map((project) => (
         <article key={project.name} className="works__card">
