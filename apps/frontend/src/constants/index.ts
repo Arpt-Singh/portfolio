@@ -24,7 +24,7 @@ const services = [
     technologies: ["React", "TypeScript", "HTML", "CSS", "SCSS", "Tailwind CSS", "Zustand", "Tauri", "SQLite", "Diesel ORM", "Redis"],
   },
   {
-    title: "Embedded Systems",
+    title: "Embedded System Design",
     icon: `${import.meta.env.BASE_URL}technology-icons/stmicroelectronics.svg`,
     technologies: ["C/C++", "STM32", "ESP32-S3", "RTOS", "Embassy", "CAN"],
   },
