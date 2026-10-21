@@ -40,7 +40,8 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className="navbar__logo" />
           <p className="navbar__name">
-            Arpit | NITian @NIT-Rourkela
+            <span className="navbar__title">Arpit | Ent Soft Engineer - I</span>
+            <span className="navbar__subtitle">NITian @NIT-Rourkela</span>
           </p>
         </Link>
 
