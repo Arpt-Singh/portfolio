@@ -11,7 +11,6 @@ const Works = () => (
     <div className="works__grid">
       {[...projects].reverse().map((project) => (
         <article key={project.name} className="works__card">
-          <img src={project.icon} alt="" className="works__icon" />
           <h3 className="works__card-title">{project.name}</h3>
           <div className="works__summary">
             <p>{project.description}</p>

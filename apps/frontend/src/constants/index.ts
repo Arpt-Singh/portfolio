@@ -17,21 +17,21 @@ export const navLinks = [
   },
 ];
 
-const serviceSymbol = (path: string) =>
-  `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 32 32"><defs><linearGradient id="edge" x2="1" y2="1"><stop stop-color="#62efff"/><stop offset="1" stop-color="#b05bff"/></linearGradient></defs><rect x="3" y="5" width="26" height="26" rx="7" fill="#512a88"/><rect x="2" y="2" width="26" height="26" rx="7" fill="#17112f" stroke="url(#edge)" stroke-width="1.5"/><g transform="translate(3 3)" fill="none" stroke="url(#edge)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="${path}"/></g></svg>`,
-  )}`;
-
 const services = [
   {
+    title: "Application & Interface Engineering",
+    icon: `${import.meta.env.BASE_URL}technology-icons/react.svg`,
+    technologies: ["React", "TypeScript", "HTML", "CSS", "SCSS", "Tailwind CSS", "Zustand", "Tauri", "SQLite", "Diesel ORM", "Redis"],
+  },
+  {
     title: "Embedded Systems",
-    icon: serviceSymbol("M6 6h12v12H6zM9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"),
-    technologies: ["C/C++", "STM32", "ESP32-S3", "Embassy", "CAN"],
+    icon: `${import.meta.env.BASE_URL}technology-icons/stmicroelectronics.svg`,
+    technologies: ["C/C++", "STM32", "ESP32-S3", "RTOS", "Embassy", "CAN"],
   },
   {
     title: "Rust & Systems Programming",
     icon: `${import.meta.env.BASE_URL}technology-icons/rust.svg`,
-    technologies: ["Rust", "IPC", "gRPC", "Async", "File I/O", "Protocol Design"],
+    technologies: ["Rust", "IPC", "Protobuf/gRPC", "Async", "File I/O", "Protocol Design"],
   },
   {
     title: "Embedded Linux & OS Architecture",
@@ -39,30 +39,25 @@ const services = [
     technologies: ["Linux", "Yocto", "OpenEmbedded", "BitBake", "Weston", "systemd"],
   },
   {
-    title: "Wireless Communication & Signal Processing",
-    icon: serviceSymbol("M2 8a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8 16a5 5 0 0 1 8 0M11 20h2"),
-    technologies: ["BLE ", "RSSI", "CAN", "Filtering", "Hysteresis"],
-  },
-  {
     title: "Machine Learning & Computer Vision",
-    icon: serviceSymbol("M5 5l7 7 7-7M5 19l7-7 7 7M5 5v14m14-14v14M3 3h4v4H3zM17 3h4v4h-4zM10 10h4v4h-4zM3 17h4v4H3zM17 17h4v4h-4z"),
+    icon: `${import.meta.env.BASE_URL}technology-icons/pytorch.svg`,
     technologies: ["Python", "PyTorch", "Deep Learning", "Image Processing", "U-Net", "MobileNet", "CNN"],
   },
   {
-    title: "Application & Interface Engineering",
-    icon: serviceSymbol("M2 4h20v16H2zM2 8h20M5 6h1m3 0h1M8 12l-3 2 3 2m8-4 3 2-3 2m-3-5-2 6"),
-    technologies: ["Tauri","React","TypeScript",  "Redis", "HTML", "CSS", "Tailwind CSS"],
+    title: "Wireless Communication & Signal Processing",
+    icon: `${import.meta.env.BASE_URL}technology-icons/bluetooth.svg`,
+    technologies: ["BLE ", "RSSI", "CAN", "Filtering", "Hysteresis"],
   },
 
   {
-    title: "Physics, Electronics & Control",
-    icon: serviceSymbol("M2 12h4l2-5 4 10 4-10 2 5h4M6 3h12M6 21h12"),
-    technologies: ["Analog Electronics", "Signal Analysis", "Electromagnetics", "Sensor"],
+    title: "Engineering Automation & Quality",
+    icon: `${import.meta.env.BASE_URL}technology-icons/playwright.svg`,
+    technologies: ["Azure DevOps", "Playwright", "SonarQube", "Vitest"],
   },
   {
-    title: "Engineering Automation & Quality",
-    icon: serviceSymbol("M12 2l8 3v7c0 5-8 10-8 10S4 17 4 12V5zM8 12l3 3 5-6"),
-    technologies: ["Azure DevOps", "Playwright", "SonarQube"],
+    title: "Physics, Electronics & Control",
+    icon: `${import.meta.env.BASE_URL}technology-icons/quantum-state.svg`,
+    technologies: ["Analog Electronics", "Signal Analysis", "Electromagnetics", "Sensor"],
   },
 ];
 
@@ -76,7 +71,6 @@ const experiences = [
   {
     title: "Enterprise Software Engineer - I",
     focus: "FEBE - Frontend & Backend Engineering",
-    icon: serviceSymbol("M3 4h18v14H3zM3 8h18M7 12l-2 2 2 2m10-4 2 2-2 2M13 11l-2 6M8 22h8M12 18v4"),
     date: "1 January 2026 - Present",
     paragraphs: [
       "Designed reusable UI components and clear frontend/backend boundaries, separating interaction logic, application state, and stored data. Built shared styles and SVG assets for consistent, multilingual interfaces.",
@@ -88,7 +82,6 @@ const experiences = [
   {
     title: "Enterprise Software Engineer - I",
     focus: "Applied AI/ML & Research",
-    icon: serviceSymbol("M4 5h4v4H4zM16 5h4v4h-4zM10 16h4v4h-4zM6 9l6 7 6-7M8 7h8"),
     date: "17 April 2025 - 1 January 2026",
     paragraphs: [
       "Worked with my technical Fellow in a two-person development team on sensor calibration and machine-learning research. Developed software for signal preprocessing, model training, and evaluation.",
@@ -99,7 +92,6 @@ const experiences = [
   {
     title: "Enterprise Software Engineer - I",
     focus: "Embedded Systems Design & Technical Leadership",
-    icon: serviceSymbol("M6 6h12v12H6zM9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"),
     date: "1 August 2024 - 17 April 2025",
     paragraphs: [
       "Led software architecture and implementation from scratch across embedded firmware, host communication services, and Python test clients. Defined component boundaries, typed service interfaces, and reusable build modules.",
@@ -110,7 +102,6 @@ const experiences = [
   {
     title: "Research and Development Intern",
     focus: "Embedded Research & Experimental Analysis",
-    icon: serviceSymbol("M2 12h4l2-5 4 10 4-10 2 5h4M6 3h12M6 21h12"),
     date: "15 November 2023 - 1 August 2024",
     paragraphs: [
       "Developed measurement and signal-analysis software for embedded motor research, covering the experimental setup, data acquisition, and validation.",
@@ -123,7 +114,6 @@ const experiences = [
 const projects = [
   {
     name: "Oscillatory Motion Analysis",
-    icon: serviceSymbol("M2 12c3-14 5 14 8 0s5 14 8 0h4M4 21h16M4 3v18"),
     description: "Built a measurement pipeline for oscillatory motor motion, where speed readings alone could not explain changes in acceleration, torque, and power.",
     solution: "Connected NI-DAQmx data acquisition to LabVIEW and MATLAB analysis. Separated signal collection, filtering, and acceleration estimation into stages, then checked the results against experimental measurements.",
     flow: [
@@ -141,7 +131,6 @@ const projects = [
   },
   {
     name: "Modular Embedded Systems Architecture",
-    icon: serviceSymbol("M6 6h12v12H6zM9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"),
     description: "Designed a shared embedded framework so multiple test applications could use the same device-control software and host interfaces instead of separate implementations.",
     solution: "Split the system into Python test clients, typed Rust host services, and Embedded C firmware. Defined Protobuf/gRPC contracts, RTOS concurrency boundaries, and reusable CMake modules to keep test logic separate from communication and real-time control.",
     flow: [
@@ -159,7 +148,6 @@ const projects = [
   },
   {
     name: "Model-Based Sensor Calibration",
-    icon: serviceSymbol("M4 3v18h17M7 17l4-6 4 2 5-8M7 15l13-9"),
     description: "Developed sensor-calibration software to handle nonlinear sensor response and support consistent input-output behavior.",
     solution: "Worked with my technical Fellow to build a flow from experimental measurements to statistical analysis, a mathematical calibration model, and embedded processing. Used the model to compensate for sensor response in software.",
     flow: [
@@ -177,7 +165,6 @@ const projects = [
   },
   {
     name: "Generative ML for Signal Evaluation",
-    icon: serviceSymbol("M4 5h4v4H4zM16 5h4v4h-4zM10 16h4v4h-4zM6 9l6 7 6-7M8 7h8"),
     description: "Built a synthetic-signal pipeline to provide additional evaluation data for signal-classification research.",
     solution: "Worked in a two-person team to separate preprocessing, model training, signal generation, and evaluation. Used Python, PyTorch, and MATLAB to run reproducible experiments and compare generated signals with reference data through statistical analysis.",
     flow: [
@@ -195,7 +182,6 @@ const projects = [
   },
   {
     name: "Multi-Touch Gesture Classification",
-    icon: serviceSymbol("M8 14V6a2 2 0 0 1 4 0v6-8a2 2 0 0 1 4 0v9l3-3 3 3-6 8H10l-7-7 3-3 2 3"),
     description: "Built a touch-classification service to prevent valid multi-touch interactions from triggering unwanted pinch-to-zoom in a desktop application.",
     solution: "Used motion analysis and linear algebra to classify touch input in Rust. Connected the service to Tauri gesture handling through gRPC, separating touch analysis from UI behavior so classification results could control zoom suppression.",
     flow: [
@@ -213,7 +199,6 @@ const projects = [
   },
   {
     name: "Full-Stack Desktop Systems Architecture",
-    icon: serviceSymbol("M2 3h20v12H2zM2 7h20M8 20h8M12 15v5M6 10l2 2-2 2m12-4-2 2 2 2"),
     featuredTechnologies: ["React", "Rust", "SQLite"],
     description: "Designed desktop application components that keep editable configuration, runtime state, and stored data consistent across React views, Rust services, and SQLite.",
     solution: "Separated reusable UI components, Zustand state, typed Tauri commands, and Diesel persistence. Added recursive change detection, schema migrations, and shared control rules, then checked state transitions and numerical boundaries through regression tests and hardware evaluation.",

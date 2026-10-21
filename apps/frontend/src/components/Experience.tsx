@@ -4,9 +4,6 @@ import "./Experience.scss";
 
 const ExperienceCard = ({ experience }: { experience: (typeof experiences)[number] }) => (
   <li className="experience__entry">
-    <span className="experience__icon">
-      <img src={experience.icon} alt="" />
-    </span>
     <article className="experience__card">
       <h3 className="experience__title">{experience.title}</h3>
       <p className="experience__focus">{experience.focus}</p>
