@@ -1,5 +1,4 @@
-import { Component, useEffect, useState, type ErrorInfo, type ReactNode } from "react";
-import { useThree } from "@react-three/fiber";
+import { Component, type ErrorInfo, type ReactNode } from "react";
 
 interface CanvasErrorBoundaryProps {
   name: string;
@@ -26,21 +25,4 @@ export class CanvasErrorBoundary extends Component<
   render() {
     return this.state.failed ? this.props.fallback : this.props.children;
   }
-}
-
-export function WebGLContextGuard() {
-  const { gl } = useThree();
-  const [error, setError] = useState<Error | null>(null);
-
-  useEffect(() => {
-    const canvas = gl.domElement;
-    const handleContextLost = () => {
-      setError(new Error("WebGL context lost"));
-    };
-    canvas.addEventListener("webglcontextlost", handleContextLost);
-    return () => canvas.removeEventListener("webglcontextlost", handleContextLost);
-  }, [gl]);
-
-  if (error) throw error;
-  return null;
 }

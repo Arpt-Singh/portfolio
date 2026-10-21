@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { navLinks } from "../constants";
 import { logo } from "../assets";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -26,32 +27,28 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full flex items-center py-5 fixed top-0 z-30 ${
-        scrolled ? "bg-primary" : "bg-transparent"
-      }`}
+      className={`navbar${scrolled ? " navbar--scrolled" : ""}`}
     >
-      <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center'>
+      <div className="navbar__container">
         <Link
           to='/'
-          className='flex min-w-0 items-center gap-2'
+          className="navbar__brand"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='brand-mark h-11 w-11 shrink-0 object-contain' />
-          <p className='text-white text-[14px] sm:text-[18px] font-bold cursor-pointer'>
+          <img src={logo} alt='logo' className="navbar__logo" />
+          <p className="navbar__name">
             Arpit | NITian @NIT-Rourkela
           </p>
         </Link>
 
-        <ul className='list-none hidden lg:flex flex-row gap-10'>
+        <ul className="navbar__desktop-links">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${
-                active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              className={`navbar__item${active === nav.title ? " navbar__item--active" : ""}`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -59,35 +56,32 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className='lg:hidden flex shrink-0 justify-end items-center ml-3'>
+        <div className="navbar__mobile">
           <button
             type='button'
             aria-label={toggle ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={toggle}
             aria-controls='mobile-navigation'
             onClick={() => setToggle((open) => !open)}
-            className='project-focus relative flex h-11 w-11 items-center justify-center rounded-lg border border-secondary/40 text-white'
+            className={`navbar__toggle${toggle ? " navbar__toggle--open" : ""}`}
           >
-            <span aria-hidden='true' className='relative block h-5 w-6'>
-              <span className={`absolute left-0 top-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-200 motion-reduce:transition-none ${toggle ? "translate-y-[9px] rotate-45" : ""}`} />
-              <span className={`absolute left-0 top-[9px] h-0.5 w-6 rounded-full bg-current transition-opacity duration-200 motion-reduce:transition-none ${toggle ? "opacity-0" : ""}`} />
-              <span className={`absolute left-0 top-[18px] h-0.5 w-6 rounded-full bg-current transition-transform duration-200 motion-reduce:transition-none ${toggle ? "-translate-y-[9px] -rotate-45" : ""}`} />
+            <span aria-hidden='true' className="navbar__hamburger">
+              <span className="navbar__bar" />
+              <span className="navbar__bar" />
+              <span className="navbar__bar" />
             </span>
           </button>
 
           <div
             id='mobile-navigation'
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 bg-primary absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            className="navbar__dropdown"
+            hidden={!toggle}
           >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+            <ul className="navbar__mobile-links">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
+                  className={`navbar__item${active === nav.title ? " navbar__item--active" : ""}`}
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(nav.title);

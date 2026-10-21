@@ -77,7 +77,6 @@ const experiences = [
     title: "Research and Development Intern",
     focus: "Embedded Research & Experimental Analysis",
     icon: serviceSymbol("M2 12h4l2-5 4 10 4-10 2 5h4M6 3h12M6 21h12"),
-    iconBg: "#383E56",
     date: "15 November 2023 - 1 August 2024",
     points: [
       "Responsibility: Developed measurement and signal-analysis software for embedded motor research, including experimental setup, data acquisition, and validation.",
@@ -89,7 +88,6 @@ const experiences = [
     title: "Enterprise Software Engineer - I",
     focus: "Embedded Systems Design & Technical Leadership",
     icon: serviceSymbol("M6 6h12v12H6zM9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"),
-    iconBg: "#E6DEDD",
     date: "1 August 2024 - 17 April 2025",
     points: [
       "Design contribution: Led software architecture and implementation from scratch across embedded firmware, host communication services, and Python test clients.",
@@ -102,7 +100,6 @@ const experiences = [
     title: "Enterprise Software Engineer - I",
     focus: "Applied AI/ML & Research",
     icon: serviceSymbol("M4 5h4v4H4zM16 5h4v4h-4zM10 16h4v4h-4zM6 9l6 7 6-7M8 7h8"),
-    iconBg: "#383E56",
     date: "17 April 2025 - 1 January 2026",
     points: [
       "Design contribution: Worked with my technical Fellow as a two-person development team on sensor calibration and machine-learning research.",
@@ -115,7 +112,6 @@ const experiences = [
     title: "Enterprise Software Engineer - I",
     focus: "FEBE - Frontend & Backend Engineering",
     icon: serviceSymbol("M3 4h18v14H3zM3 8h18M7 12l-2 2 2 2m10-4 2 2-2 2M13 11l-2 6M8 22h8M12 18v4"),
-    iconBg: "#E6DEDD",
     date: "1 January 2026 - Present",
     points: [
       "Design contribution: Designed reusable presentation components and frontend/backend boundaries, separating interaction logic, application state, and persistent data. Developed shared styling and SVG assets for consistent, multilingual interfaces.",

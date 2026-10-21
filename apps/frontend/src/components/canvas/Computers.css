@@ -1,0 +1,5 @@
+.workstation { position: relative; width: 100%; height: 100%; }
+.workstation__canvas { display: block; width: 100%; height: 100%; visibility: hidden; }
+.workstation--ready .workstation__canvas { visibility: visible; }
+.workstation__preview { position: absolute; inset: 0; z-index: 10; width: 100%; height: 100%; object-fit: contain; transform: scale(.9803921569); }
+.workstation__status { position: absolute; left: 0; right: 0; bottom: 32px; z-index: 20; text-align: center; font-size: 14px; color: var(--color-secondary); }

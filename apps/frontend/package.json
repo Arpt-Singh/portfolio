@@ -7,34 +7,23 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test src/api/*.test.ts",
+    "test": "tsx --test src/api/*.test.ts src/*.test.ts",
     "preview": "vite preview",
     "generate:workstation": "tsx scripts/create-workstation.ts"
   },
   "dependencies": {
     "@portfolio/interface": "*",
-    "@react-three/drei": "^9.56.24",
-    "@react-three/fiber": "^8.11.1",
-    "framer-motion": "^9.0.7",
-    "maath": "^0.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.18.4",
-    "react-tilt": "^1.0.2",
-    "react-vertical-timeline-component": "^3.6.0",
     "three": "^0.149.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@types/react-vertical-timeline-component": "^3.3.6",
     "@types/three": "~0.149.0",
-    "@tailwindcss/postcss": "^4.3.3",
     "@vitejs/plugin-react": "^6.1.2",
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^4.3.3",
     "tsx": "^4.20.0",
     "vite": "^8.3.4"
   }

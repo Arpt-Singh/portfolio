@@ -1,0 +1,13 @@
+.contact { overflow: hidden; }
+.contact__panel { overflow: hidden; border: 1px solid rgb(255 255 255 / 10%); border-radius: 24px; background: #100d25; }
+.contact__intro { padding: 24px; background: radial-gradient(ellipse at top left, rgb(145 94 255 / 16%), transparent 75%); }
+.contact__heading { margin-top: 8px; }
+.contact__description { margin-top: 20px; max-width: 576px; font-size: 16px; line-height: 28px; color: var(--color-secondary); }
+.contact__details { margin-top: 36px; }
+.contact__label { margin-bottom: 12px; color: var(--color-secondary); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; }
+.contact__email { display: inline-block; max-width: 100%; word-break: break-all; font-size: 15px; font-weight: 500; color: #c4adff; text-decoration: underline; text-decoration-color: rgb(145 94 255 / 40%); text-underline-offset: 4px; }
+.contact__topics { margin-top: 20px; font-size: 14px; line-height: 24px; color: var(--color-secondary); }
+@media (min-width: 640px) {
+  .contact__intro { padding: 40px; }
+  .contact__email { font-size: 17px; }
+}
