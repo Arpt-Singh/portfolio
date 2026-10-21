@@ -1,6 +1,6 @@
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
-import "./About.css";
+import "./About.scss";
 
 const ServiceCard = ({ title, icon, technologies }: (typeof services)[number]) => (
   <article className="about__card">

@@ -3,7 +3,7 @@ import { Box3, Group, Mesh, PerspectiveCamera, Vector3 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { CanvasErrorBoundary } from "./CanvasErrorBoundary";
 import { disposeScene, useCanvasRenderer, type CanvasSetup } from "./useCanvasRenderer";
-import "./Computers.css";
+import "./Computers.scss";
 
 const WORKSPACE_MODEL = `${import.meta.env.BASE_URL}desktop_pc/workstation01/scene.glb`;
 const WORKSPACE_PREVIEW = `${import.meta.env.BASE_URL}desktop_pc/workstation01/textures/workstation01.png`;

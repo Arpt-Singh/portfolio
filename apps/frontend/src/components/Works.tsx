@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import "./Works.css";
+import "./Works.scss";
 
 type Project = (typeof projects)[number];
 

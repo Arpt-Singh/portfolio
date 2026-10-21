@@ -4,15 +4,46 @@ import path from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
+import { compile, compileString } from "sass";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 
-function sourceFiles(directory: string): string[] {
+function sourceFiles(directory: string, extension = /\.tsx?$/): string[] {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const filename = path.join(directory, entry.name);
-    return entry.isDirectory() ? sourceFiles(filename) : /\.tsx?$/.test(filename) ? [filename] : [];
+    return entry.isDirectory() ? sourceFiles(filename, extension) : extension.test(filename) ? [filename] : [];
   });
 }
+
+test("all SCSS compiles and custom properties have definitions", () => {
+  const stylesheets = sourceFiles(root, /\.scss$/);
+  const css = stylesheets.map((filename) => compile(filename).css).join("\n");
+  const definitions = new Set([...css.matchAll(/(--[\w-]+)\s*:/g)].map((match) => match[1]));
+  for (const [, name] of css.matchAll(/var\((--[\w-]+)/g)) {
+    assert.ok(definitions.has(name), `Missing custom property: ${name}`);
+  }
+  const mixins = compile(path.join(root, "styles/_mixins.scss")).css;
+  assert.equal(mixins, "", "Importing mixins must not emit duplicate global styles");
+});
+
+test("responsive mixins retain breakpoint boundaries and reject unknown names", () => {
+  const options = { loadPaths: [path.join(root, "styles")] };
+  const css = compileString(`
+    @use "mixins";
+    @include mixins.up(sm) { .tablet { display: grid; } }
+    @include mixins.below(md) { .phone { display: flex; } }
+    @include mixins.up(timeline) { .timeline { display: grid; } }
+    @include mixins.reduced-motion { .motion { animation: none; } }
+  `, options).css;
+  assert.match(css, /min-width: 640px/);
+  assert.match(css, /max-width: 767px/);
+  assert.match(css, /min-width: 1170px/);
+  assert.match(css, /prefers-reduced-motion: reduce/);
+  assert.throws(() => compileString(`
+    @use "mixins";
+    @include mixins.up(unknown) { .invalid { display: none; } }
+  `, options), /Unknown breakpoint: unknown/);
+});
 
 test("presentation source has no inline styles or runtime DOM style access", () => {
   const violations: string[] = [];
@@ -41,7 +72,7 @@ test("each component with named presentation classes imports its adjacent styles
   for (const filename of sourceFiles(root).filter((file) => file.endsWith(".tsx"))) {
     const content = readFileSync(filename, "utf8");
     if (!content.includes("className=")) continue;
-    const stylesheet = filename.replace(/\.tsx$/, ".css");
+    const stylesheet = filename.replace(/\.tsx$/, ".scss");
     assert.ok(existsSync(stylesheet), `${filename} is missing a stylesheet`);
     assert.ok(content.includes(`"./${path.basename(stylesheet)}"`), `${filename} does not import its stylesheet`);
   }

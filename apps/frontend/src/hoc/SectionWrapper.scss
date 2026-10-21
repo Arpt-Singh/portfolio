@@ -1,0 +1,6 @@
+@use "../styles/mixins";
+
+.section-wrapper { @include mixins.container; position: relative; z-index: 0; padding: var(--space-10) var(--space-4); }
+.section-wrapper__anchor { display: block; margin-top: -100px; padding-bottom: 100px; }
+@include mixins.up(sm) { .section-wrapper { padding: 64px var(--space-6); } }
+@include mixins.up(lg) { .section-wrapper { padding-inline: var(--space-8); } }

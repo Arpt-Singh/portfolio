@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { BufferGeometry, Float32BufferAttribute, Group, PerspectiveCamera, Points, PointsMaterial, Scene } from "three";
 import { CanvasErrorBoundary } from "./CanvasErrorBoundary";
 import { disposeScene, useCanvasRenderer, type CanvasSetup } from "./useCanvasRenderer";
-import "./Stars.css";
+import "./Stars.scss";
 
 const setupStars: CanvasSetup = ({ canvas, renderer, isActive, fail }) => {
   const scene = new Scene();

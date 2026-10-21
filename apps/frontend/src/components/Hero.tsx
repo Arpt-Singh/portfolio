@@ -1,5 +1,5 @@
 import { ComputersCanvas } from "./canvas";
-import "./Hero.css";
+import "./Hero.scss";
 
 const Hero = () => (
   <section className="hero">

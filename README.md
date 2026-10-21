@@ -7,7 +7,7 @@ Turborepo monorepo using npm workspaces.
 ```text
 portfolio/
 |-- apps/
-|   |-- frontend/           # React, TypeScript, Vite, component-scoped CSS, Three.js
+|   |-- frontend/           # React, TypeScript, Vite, component-scoped SCSS, Three.js
 |   |   |-- public/         # Static images, icons, and workstation GLB
 |   |   |-- scripts/        # Workstation asset generator
 |   |   `-- src/            # Components, styles, content, and API client
@@ -22,8 +22,11 @@ portfolio/
 `-- turbo.json             # Task orchestration and caching
 ```
 
-UI components use adjacent `.css` files with parent and child class names.
-Shared resets, theme variables, and headings live in `src/index.css`.
+UI components use adjacent `.scss` files with parent and child class names.
+Shared theme, spacing, and radius variables live in `src/styles/_tokens.scss`;
+reusable layout, card, badge, and breakpoint mixins live in `src/styles/_mixins.scss`.
+Components load mixins with Sass `@use`; `src/index.scss` loads tokens once
+alongside shared resets and headings. Vite compiles SCSS automatically.
 Nonvisual TypeScript modules do not need empty stylesheets.
 Layout and hover effects use CSS; scroll reveals have been removed to avoid
 runtime DOM styles. The workstation GLB preserves smooth mouse-following 3D tilt,

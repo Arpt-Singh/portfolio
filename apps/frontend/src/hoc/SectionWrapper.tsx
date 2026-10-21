@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import "./SectionWrapper.css";
+import "./SectionWrapper.scss";
 
 const SectionWrapper = (Component: ComponentType, idName: string) =>
   function WrappedSection() {

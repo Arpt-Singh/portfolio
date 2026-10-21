@@ -1,6 +1,6 @@
 import { employer, experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import "./Experience.css";
+import "./Experience.scss";
 
 const ExperienceCard = ({ experience }: { experience: (typeof experiences)[number] }) => (
   <li className="experience__entry">

@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionWrapper } from "../hoc";
-import "./Feedbacks.css";
+import "./Feedbacks.scss";
 
 const Feedbacks = () => (
   <div className="feedbacks">

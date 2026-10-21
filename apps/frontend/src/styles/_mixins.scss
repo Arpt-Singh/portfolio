@@ -1,0 +1,77 @@
+@use "sass:map";
+
+$breakpoints: (
+  xs: 450px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  timeline: 1170px,
+  xl: 1280px,
+);
+
+@function breakpoint($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error "Unknown breakpoint: #{$name}";
+  }
+  @return map.get($breakpoints, $name);
+}
+
+@mixin up($name) {
+  @media (min-width: breakpoint($name)) { @content; }
+}
+
+@mixin below($name) {
+  @media (max-width: (breakpoint($name) - 1px)) { @content; }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) { @content; }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: auto;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin canvas-size {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin columns($count) {
+  grid-template-columns: repeat($count, minmax(0, 1fr));
+}
+
+@mixin gradient-card {
+  min-width: 0;
+  padding: 1px;
+  border-radius: var(--radius-card);
+  background: var(--gradient-card);
+  box-shadow: var(--card-shadow);
+}
+
+@mixin badge {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  font-size: var(--font-size-caption);
+  color: var(--color-secondary);
+}
+
+@mixin small-copy {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
