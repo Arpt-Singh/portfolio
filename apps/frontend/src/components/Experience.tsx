@@ -26,7 +26,7 @@ const ExperienceCard = ({ experience }: { experience: (typeof experiences)[numbe
 const Experience = () => (
   <div className="experience">
     <header className="experience__header">
-      <p className="section-subheading">What I have done so far</p>
+      <p className="section-subheading">My engineering journey</p>
       <h2 className="section-heading">Work Experience.</h2>
     </header>
     <ol className="experience__timeline">
