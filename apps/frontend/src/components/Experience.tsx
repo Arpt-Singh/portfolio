@@ -23,7 +23,7 @@ const ExperienceCard = ({ experience }: { experience: (typeof experiences)[numbe
       <div className="experience__employer">
         <a href={employer.url} target="_blank" rel="noopener noreferrer"
           aria-label={`Visit ${employer.name} (opens in a new tab)`}>
-          <img src={employer.logo} alt="Medtronic" width={53} height={56} loading="lazy" />
+          <img src={employer.logo} alt="Medtronic" width={40} height={38} loading="lazy" />
         </a>
       </div>
     </article>
