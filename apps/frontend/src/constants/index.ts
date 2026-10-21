@@ -74,26 +74,15 @@ export const employer = {
 
 const experiences = [
   {
-    title: "Research and Development Intern",
-    focus: "Embedded Research & Experimental Analysis",
-    icon: serviceSymbol("M2 12h4l2-5 4 10 4-10 2 5h4M6 3h12M6 21h12"),
-    date: "15 November 2023 - 1 August 2024",
-    points: [
-      "Responsibility: Developed measurement and signal-analysis software for embedded motor research, including experimental setup, data acquisition, and validation.",
-      "Technologies: Hall-effect sensing, NI-DAQmx data acquisition, LabVIEW, MATLAB, and a controller-based test setup.",
-      "Achievement: Research accepted for presentation at a U.S. science and technology event.",
-    ],
-  },
-  {
     title: "Enterprise Software Engineer - I",
-    focus: "Embedded Systems Design & Technical Leadership",
-    icon: serviceSymbol("M6 6h12v12H6zM9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"),
-    date: "1 August 2024 - 17 April 2025",
+    focus: "FEBE - Frontend & Backend Engineering",
+    icon: serviceSymbol("M3 4h18v14H3zM3 8h18M7 12l-2 2 2 2m10-4 2 2-2 2M13 11l-2 6M8 22h8M12 18v4"),
+    date: "1 January 2026 - Present",
     points: [
-      "Design contribution: Led software architecture and implementation from scratch across embedded firmware, host communication services, and Python test clients.",
-      "Responsibility: Defined component boundaries, typed service interfaces, and reusable build modules; developed touch-classification services for desktop integration.",
-      "Technologies: Embedded C, Rust, Python, CMake, RTOS, Protocol Buffers/gRPC, and Tauri.",
-      "Achievement: Built a reusable framework separating test logic, communication services, and embedded device control.",
+      "Design contribution: Designed reusable presentation components and frontend/backend boundaries, separating interaction logic, application state, and persistent data. Developed shared styling and SVG assets for consistent, multilingual interfaces.",
+      "Responsibility: Designed application-state management, change-detection algorithms, and Rust data-persistence interfaces. Defined configuration lifecycle and schema-evolution boundaries, and improved consistency across UI state, backend calculations, and event-driven system updates.",
+      "Technologies: React, TypeScript, Rust, Tauri, SCSS, SVG, Zustand, SQLite/Diesel, Protocol Buffers/gRPC, Vitest, PyVision, and Azure DevOps.",
+      "Achievement: Improved application-state consistency and numerical correctness through shared rules, data-driven calculations, and typed interfaces. Extended service lifecycle controls and verified changes through regression tests and hardware-based evaluation.",
     ],
   },
   {
@@ -110,14 +99,25 @@ const experiences = [
   },
   {
     title: "Enterprise Software Engineer - I",
-    focus: "FEBE - Frontend & Backend Engineering",
-    icon: serviceSymbol("M3 4h18v14H3zM3 8h18M7 12l-2 2 2 2m10-4 2 2-2 2M13 11l-2 6M8 22h8M12 18v4"),
-    date: "1 January 2026 - Present",
+    focus: "Embedded Systems Design & Technical Leadership",
+    icon: serviceSymbol("M6 6h12v12H6zM9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"),
+    date: "1 August 2024 - 17 April 2025",
     points: [
-      "Design contribution: Designed reusable presentation components and frontend/backend boundaries, separating interaction logic, application state, and persistent data. Developed shared styling and SVG assets for consistent, multilingual interfaces.",
-      "Responsibility: Designed application-state management, change-detection algorithms, and Rust data-persistence interfaces. Defined configuration lifecycle and schema-evolution boundaries, and improved consistency across UI state, backend calculations, and event-driven system updates.",
-      "Technologies: React, TypeScript, Rust, Tauri, SCSS, SVG, Zustand, SQLite/Diesel, Protocol Buffers/gRPC, Vitest, PyVision, and Azure DevOps.",
-      "Achievement: Improved application-state consistency and numerical correctness through shared rules, data-driven calculations, and typed interfaces. Extended service lifecycle controls and verified changes through regression tests and hardware-based evaluation.",
+      "Design contribution: Led software architecture and implementation from scratch across embedded firmware, host communication services, and Python test clients.",
+      "Responsibility: Defined component boundaries, typed service interfaces, and reusable build modules; developed touch-classification services for desktop integration.",
+      "Technologies: Embedded C, Rust, Python, CMake, RTOS, Protocol Buffers/gRPC, and Tauri.",
+      "Achievement: Built a reusable framework separating test logic, communication services, and embedded device control.",
+    ],
+  },
+  {
+    title: "Research and Development Intern",
+    focus: "Embedded Research & Experimental Analysis",
+    icon: serviceSymbol("M2 12h4l2-5 4 10 4-10 2 5h4M6 3h12M6 21h12"),
+    date: "15 November 2023 - 1 August 2024",
+    points: [
+      "Responsibility: Developed measurement and signal-analysis software for embedded motor research, including experimental setup, data acquisition, and validation.",
+      "Technologies: Hall-effect sensing, NI-DAQmx data acquisition, LabVIEW, MATLAB, and a controller-based test setup.",
+      "Achievement: Research accepted for presentation at a U.S. science and technology event.",
     ],
   },
 ];
