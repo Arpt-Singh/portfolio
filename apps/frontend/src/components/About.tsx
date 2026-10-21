@@ -23,7 +23,7 @@ const About = () => (
       <h2 className="section-heading">Overview</h2>
     </header>
     <p className="about__description">
-      I design end-to-end systems spanning embedded firmware, backend services, desktop applications, and test platforms—defining the interfaces and data flows that make hardware and software work reliably together.
+      I design end-to-end systems spanning embedded firmware, backend services, desktop applications, and test platforms - defining the interfaces and data flows that make hardware and software work reliably together.
     </p>
     <div className="about__grid">
       {services.map((service) => <ServiceCard key={service.title} {...service} />)}

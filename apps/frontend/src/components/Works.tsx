@@ -5,7 +5,7 @@ import "./Works.scss";
 const Works = () => (
   <div className="works">
     <header className="works__header">
-      <p className="section-subheading">Research & engineering</p>
+      <p className="section-subheading">Research & Engineering</p>
       <h2 className="section-heading">Projects</h2>
     </header>
     <div className="works__grid">

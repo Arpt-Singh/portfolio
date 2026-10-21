@@ -134,7 +134,7 @@ const projects = [
     responsibility: "Architected the layered platform across test clients, host services, and embedded device control.",
     overview: "Separated Python test clients, Rust host services, and Embedded C control with defined RPC contracts, RTOS task boundaries, and shared build modules.",
     contributions: ["Built a reusable layered test platform.", "Defined Protobuf/gRPC interfaces and RTOS task boundaries.", "Shared CMake modules across multiple test applications."],
-    technologies: ["Embedded C", "Rust", "Python", "CMake", "RTOS", "Protobuf/gRPC"],
+    technologies: ["Embedded C", "CMake", "RTOS", "Protobuf"],
     outcome: "Developed a reusable framework separating test software, communication services, and embedded control.",
   },
   {
@@ -168,7 +168,7 @@ const projects = [
     responsibility: "Worked in a two-person team on synthetic signal generation and evaluation workflows.",
     overview: "Created a reproducible workflow to generate synthetic signals and compare them statistically with reference data for signal-classification research.",
     contributions: ["Contributed as part of a two-person development team.", "Developed signal preprocessing and model-training software.", "Evaluated generated signals and authored a research paper."],
-    technologies: ["Python", "PyTorch", "MATLAB", "Signal processing", "Machine learning"],
+    technologies: ["Python", "PyTorch", "Machine learning", "Synthetic signal generation"],
     outcome: "Research selected and presented at a U.S. science and technology conference.",
   },
   {
@@ -185,7 +185,7 @@ const projects = [
     responsibility: "Designed the Rust classifier and gRPC integration with the Tauri desktop GUI.",
     overview: "Separated multi-touch gesture analysis into a Rust service and used its classification results to control desktop zoom behavior.",
     contributions: ["Developed touch-analysis and classification software.", "Integrated classification results into desktop gesture handling.", "Authored a research paper describing the approach."],
-    technologies: ["Rust", "Tauri", "gRPC", "Linear algebra", "Touch-input processing"],
+    technologies: ["gRPC", "Linear algebra", "Touch-input processing", "Gesture classification"],
     outcome: "The frontend uses classifier results to suppress unwanted zoom.",
   },
   {
@@ -229,7 +229,7 @@ const projects = [
         detail: "State-transition and numerical-boundary regression tests, hardware-based evaluation, and PyVision checks. Maintained test discovery, reproducible dependencies, and design/review documentation across frontend and backend changes.",
       },
     ],
-    technologies: ["React", "TypeScript", "Rust", "Tauri", "Zustand", "SQLite", "Diesel", "Protobuf/gRPC", "Vitest", "SCSS", "SVG", "JSON", "PyVision", "Azure DevOps"],
+    technologies: ["React", "TypeScript", "Rust", "Tauri", "Zustand", "SQLite", "Diesel", "Vitest", "SCSS", "SVG", "JSON", "PyVision", "Azure DevOps"],
     outcome: "Implemented recursive change detection, schema migrations, and shared control rules; validated state transitions and numerical edge cases through regression tests and hardware evaluation.",
   },
 ];
