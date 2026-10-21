@@ -55,14 +55,6 @@ $breakpoints: (
   grid-template-columns: repeat($count, minmax(0, 1fr));
 }
 
-@mixin gradient-card {
-  min-width: 0;
-  padding: 1px;
-  border-radius: var(--radius-card);
-  background: var(--gradient-card);
-  box-shadow: var(--card-shadow);
-}
-
 @mixin badge {
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-pill);

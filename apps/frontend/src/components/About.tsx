@@ -23,7 +23,9 @@ const About = () => (
       <h2 className="section-heading">Overview</h2>
     </header>
     <p className="about__description">
-      I design end-to-end systems spanning embedded firmware, backend services, desktop applications, and test platforms - defining the interfaces and data flows that make hardware and software work reliably together.
+      Most of my work is in Rust, C, TypeScript and Python. On the device side, I write RTOS firmware and build test
+      rigs for hardware. On the desktop side, I build Tauri apps with React, backed by Rust services and SQLite. A lot
+      of the real work is getting the two sides to talk reliably over Protobuf/gRPC, CAN, or Bluetooth LE.
     </p>
     <div className="about__grid">
       {services.map((service) => <ServiceCard key={service.title} {...service} />)}

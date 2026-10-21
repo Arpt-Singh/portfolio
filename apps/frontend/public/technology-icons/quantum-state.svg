@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <title>Quantum state sphere</title>
   <circle cx="32" cy="32" r="24"/>
-  <ellipse cx="32" cy="32" rx="24" ry="8" stroke="#94A3B8"/>
-  <ellipse cx="32" cy="32" rx="8" ry="24" stroke="#94A3B8"/>
-  <path d="M32 32 45 15m-7 1 7-1 1 7"/>
-  <circle cx="32" cy="32" r="3" fill="#E2E8F0" stroke="none"/>
+  <ellipse cx="32" cy="32" rx="24" ry="8" stroke="#7DD3FC"/>
+  <ellipse cx="32" cy="32" rx="8" ry="24" stroke="#7DD3FC"/>
+  <path d="M32 32 45 15m-7 1 7-1 1 7" stroke="#F59E0B"/>
+  <circle cx="32" cy="32" r="3" fill="#F59E0B" stroke="none"/>
 </svg>

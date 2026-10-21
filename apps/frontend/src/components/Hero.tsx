@@ -1,4 +1,4 @@
-import { ComputersCanvas } from "./canvas";
+import systemDesign from "../assets/system-design.png";
 import "./Hero.scss";
 
 const Hero = () => (
@@ -7,15 +7,20 @@ const Hero = () => (
     <div className="hero__intro">
       <div className="hero__copy">
         <div className="hero__text">
-          <h1 className="hero__heading">Hi, I'm <span>Arpit</span></h1>
+          <h1 className="hero__heading">Hi, I’m <span>Arpit</span></h1>
           <p className="hero__description">
-            I build embedded systems that connect electronics, firmware, wireless devices, and software.
+            I'm an embedded software engineer. I write firmware for microcontrollers, and I also build the desktop apps
+            and Rust services that talk to those devices over CAN, Bluetooth, and gRPC.
           </p>
         </div>
       </div>
-    </div>
-    <div className="hero__scene">
-      <ComputersCanvas />
+      <img
+        src={systemDesign}
+        alt="Engineering books and a notebook showing an embedded system and gRPC service architecture"
+        width={1325}
+        height={767}
+        className="hero__image"
+      />
     </div>
   </section>
 );

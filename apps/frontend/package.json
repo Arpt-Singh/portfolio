@@ -8,8 +8,7 @@
     "build": "tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test src/api/*.test.ts src/*.test.ts",
-    "preview": "vite preview",
-    "generate:workstation": "tsx scripts/create-workstation.ts"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@portfolio/interface": "*",

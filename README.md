@@ -8,8 +8,7 @@ Turborepo monorepo using npm workspaces.
 portfolio/
 |-- apps/
 |   |-- frontend/           # React, TypeScript, Vite, component-scoped SCSS, Three.js
-|   |   |-- public/         # Static images, icons, and workstation GLB
-|   |   |-- scripts/        # Workstation asset generator
+|   |   |-- public/         # Static icons
 |   |   `-- src/            # Components, styles, content, and API client
 |   `-- backend/
 |       `-- src/            # TypeScript Node.js API
@@ -29,9 +28,8 @@ Components load mixins with Sass `@use`; `src/index.scss` loads tokens once
 alongside shared resets and headings. Vite compiles SCSS automatically.
 Nonvisual TypeScript modules do not need empty stylesheets.
 Layout and hover effects use CSS; scroll reveals have been removed to avoid
-runtime DOM styles. The workstation GLB preserves smooth mouse-following 3D tilt,
-and the stars rotate using native Three.js canvases with CSS dimensions.
-Both respect reduced-motion preferences; rendering updates canvas pixels,
+runtime DOM styles. The decorative stars rotate using a native Three.js canvas
+with CSS dimensions and respect reduced-motion preferences. Rendering updates canvas pixels,
 not inline CSS.
 
 ## Clone and run locally

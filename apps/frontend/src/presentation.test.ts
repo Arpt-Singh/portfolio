@@ -15,12 +15,16 @@ function sourceFiles(directory: string, extension = /\.tsx?$/): string[] {
   });
 }
 
-test("all SCSS compiles and custom properties have definitions", () => {
+test("all SCSS compiles and custom properties are defined and used", () => {
   const stylesheets = sourceFiles(root, /\.scss$/);
   const css = stylesheets.map((filename) => compile(filename).css).join("\n");
   const definitions = new Set([...css.matchAll(/(--[\w-]+)\s*:/g)].map((match) => match[1]));
-  for (const [, name] of css.matchAll(/var\((--[\w-]+)/g)) {
+  const references = new Set([...css.matchAll(/var\((--[\w-]+)/g)].map((match) => match[1]));
+  for (const name of references) {
     assert.ok(definitions.has(name), `Missing custom property: ${name}`);
+  }
+  for (const name of definitions) {
+    assert.ok(references.has(name), `Unused custom property: ${name}`);
   }
   const mixins = compile(path.join(root, "styles/_mixins.scss")).css;
   assert.equal(mixins, "", "Importing mixins must not emit duplicate global styles");

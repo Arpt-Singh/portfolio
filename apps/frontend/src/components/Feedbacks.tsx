@@ -1,4 +1,4 @@
-import React from "react";
+import galileo from "../assets/galileo.jpg";
 import { SectionWrapper } from "../hoc";
 import "./Feedbacks.scss";
 
@@ -11,17 +11,14 @@ const Feedbacks = () => (
       </blockquote>
       <figcaption className="feedbacks__caption">
         <img
-          src='https://commons.wikimedia.org/wiki/Special:FilePath/Galileo_Galilei_2.jpg?width=160'
+          src={galileo}
           alt='Portrait of Galileo Galilei'
           loading='lazy'
           width={64}
           height={64}
           className="feedbacks__portrait"
         />
-        <span>
-          Galileo Galilei
-          <span className="feedbacks__attribution">Attributed quotation</span>
-        </span>
+        <span>Galileo Galilei</span>
       </figcaption>
     </figure>
 

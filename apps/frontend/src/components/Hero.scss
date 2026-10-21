@@ -1,35 +1,25 @@
 @use "../styles/mixins";
 
-.hero { @include mixins.container; position: relative; overflow: hidden; padding-bottom: var(--space-8); }
+.hero { @include mixins.container; position: relative; overflow: hidden; }
 .hero__shade { position: absolute; inset: 0; z-index: 10; pointer-events: none; background: linear-gradient(to bottom, rgb(var(--color-primary-rgb) / 35%), transparent 50%); }
 .hero__intro { position: relative; z-index: 20; width: 100%; padding: 112px 16px 0; }
 .hero__copy { width: 100%; max-width: 585px; min-width: 0; }
 .hero__text { min-width: 0; text-shadow: 0 2px 10px rgb(var(--color-primary-rgb) / 78%); }
-.hero__heading { margin-top: 8px; font-size: 40px; font-weight: 900; line-height: 1.5; }
+.hero__heading { margin-top: 8px; font-size: 40px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
 .hero__heading span { color: var(--color-text); }
-.hero__description { margin-top: 20px; font-size: 16px; line-height: 28px; color: var(--color-copy); }
-.hero__scene {
-  position: relative; width: 100%; aspect-ratio: 3 / 2; margin-top: 8px; pointer-events: none;
-  animation: hero-float 9s ease-in-out infinite;
-  --scene-right-fade: 99%;
-  --scene-fade-width: 18%;
-  mask-image:
-    linear-gradient(to right, transparent 1.5%, rgb(0 0 0 / 8%) 3%, rgb(0 0 0 / 32%) 5%, rgb(0 0 0 / 65%) 8%, rgb(0 0 0 / 90%) 12%, #000 17%, #000 calc(var(--scene-right-fade) - var(--scene-fade-width)), rgb(0 0 0 / 92%) calc(var(--scene-right-fade) - var(--scene-fade-width) * .75), rgb(0 0 0 / 50%) calc(var(--scene-right-fade) - var(--scene-fade-width) * .5), rgb(0 0 0 / 8%) calc(var(--scene-right-fade) - var(--scene-fade-width) * .25), transparent var(--scene-right-fade)),
-    linear-gradient(to bottom, transparent 2%, rgb(0 0 0 / 8%) 4%, rgb(0 0 0 / 50%) 8%, rgb(0 0 0 / 92%) 12%, #000 16%, #000 78%, rgb(0 0 0 / 92%) 83%, rgb(0 0 0 / 50%) 89%, rgb(0 0 0 / 8%) 95%, transparent 99%);
-  mask-composite: intersect;
-}
-@keyframes hero-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+.hero__description { max-width: 34em; margin-top: var(--space-4); font-size: 16px; line-height: 28px; color: var(--color-copy); }
+.hero__image { display: block; width: auto; max-width: 100%; height: auto; max-height: 200px; margin-top: var(--space-6); }
 @include mixins.up(xs) { .hero__heading { font-size: 50px; } }
 @include mixins.up(sm) {
   .hero__intro { padding: 128px 24px 0; }
-  .hero__heading { font-size: 60px; }
+  .hero__heading { font-size: 56px; }
+  .hero__description { font-size: 18px; line-height: 30px; }
 }
 @include mixins.up(lg) {
-  .hero { min-height: calc(min(62.6667vw, 802.133px) + 76px); padding-bottom: 0; }
-  .hero__intro { padding: 128px 32px 112px; }
-  .hero__copy { max-width: min(350px, calc(26vw - 24px)); }
-  .hero__heading { font-size: clamp(32px, 3.5vw, 48px); line-height: 1.15; }
+  .hero { margin-bottom: calc(-1 * var(--space-6)); }
+  .hero__intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: var(--space-8); padding: 164px 32px 0; }
+  .hero__image { width: auto; max-width: 100%; max-height: 340px; margin-top: 0; justify-self: end; }
+  .hero__copy { max-width: 560px; }
+  .hero__heading { margin-top: 0; font-size: clamp(40px, 4vw, 56px); }
   .hero__shade { background: radial-gradient(ellipse 460px 290px at 100px 200px, rgb(var(--color-primary-rgb) / 85%) 20%, rgb(var(--color-primary-rgb) / 50%) 55%, transparent 100%); }
-  .hero__scene { position: absolute; left: calc(6% + 50px); top: 76px; width: 94%; margin-top: 0; --scene-right-fade: calc(100% - 64px); --scene-fade-width: 180px; }
 }
-@include mixins.reduced-motion { .hero__scene { animation: none; } }

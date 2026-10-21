@@ -13,9 +13,7 @@ const Works = () => (
         <article key={project.name} className="works__card">
           <h3 className="works__card-title">{project.name}</h3>
           <div className="works__summary">
-            <p>{project.description}</p>
-            <p>{project.solution}</p>
-            <p>{project.outcome}</p>
+            {project.summary.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
           <ul className="works__technologies" aria-label={`${project.name} technologies`}>
             {project.technologies.map((technology) => (
