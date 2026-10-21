@@ -8,7 +8,7 @@
 .hero__heading { margin-top: 8px; font-size: 40px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
 .hero__heading span { color: var(--color-text); }
 .hero__description { max-width: 34em; margin-top: var(--space-4); font-size: 16px; line-height: 28px; color: var(--color-copy); }
-.hero__image { display: block; width: auto; max-width: 100%; height: auto; max-height: 200px; margin-top: var(--space-6); }
+.hero__image { display: block; width: auto; max-width: 100%; height: auto; max-height: 200px; margin: var(--space-6) auto 0; }
 @include mixins.up(xs) { .hero__heading { font-size: 50px; } }
 @include mixins.up(sm) {
   .hero__intro { padding: 128px 24px 0; }
@@ -18,7 +18,7 @@
 @include mixins.up(lg) {
   .hero { margin-bottom: calc(-1 * var(--space-6)); }
   .hero__intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: var(--space-8); padding: 164px 32px 0; }
-  .hero__image { width: auto; max-width: 100%; max-height: 340px; margin-top: 0; justify-self: end; }
+  .hero__image { width: auto; max-width: 100%; max-height: 340px; margin: 0; justify-self: end; }
   .hero__copy { max-width: 560px; }
   .hero__heading { margin-top: 0; font-size: clamp(40px, 4vw, 56px); }
   .hero__shade { background: radial-gradient(ellipse 460px 290px at 100px 200px, rgb(var(--color-primary-rgb) / 85%) 20%, rgb(var(--color-primary-rgb) / 50%) 55%, transparent 100%); }
