@@ -1,7 +1,7 @@
 import { SectionWrapper } from "../hoc";
 import "./Contact.scss";
 
-const CONTACT_EMAIL = "aptsng2@gmail.com";
+const CONTACT_EMAIL = "contact.arpitsystems@gmail.com";
 
 const Contact = () => (
   <div className="contact">
