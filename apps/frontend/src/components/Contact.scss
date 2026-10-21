@@ -4,11 +4,11 @@
 .contact__panel { overflow: hidden; border: 1px solid var(--color-border); border-radius: var(--radius-large); background: var(--color-tertiary); }
 .contact__intro { padding: var(--space-6); }
 .contact__heading { margin-top: 8px; }
-.contact__description { margin-top: 20px; max-width: 576px; font-size: 16px; line-height: 28px; color: var(--color-text); }
+.contact__description { margin-top: 20px; max-width: 576px; font-size: 16px; line-height: 28px; color: var(--color-copy); }
 .contact__details { margin-top: 36px; }
 .contact__label { margin-bottom: 12px; color: var(--color-text); font-size: var(--font-size-small); font-weight: 400; }
 .contact__email { display: inline-block; max-width: 100%; word-break: break-all; font-size: 15px; font-weight: 500; color: var(--color-text); text-decoration: underline; text-decoration-color: currentColor; text-underline-offset: var(--space-1); }
-.contact__topics { @include mixins.small-copy; margin-top: var(--space-5); color: var(--color-text); }
+.contact__topics { @include mixins.small-copy; margin-top: var(--space-5); color: var(--color-secondary); }
 @include mixins.up(sm) {
   .contact__intro { padding: var(--space-10); }
   .contact__email { font-size: 17px; }

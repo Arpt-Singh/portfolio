@@ -20,13 +20,10 @@ const About = () => (
   <div className="about">
     <header className="about__header">
       <p className="section-subheading">Introduction</p>
-      <h2 className="section-heading">Overview.</h2>
+      <h2 className="section-heading">Overview</h2>
     </header>
     <p className="about__description">
-      I build intelligent embedded systems by connecting electronics, physics, low level programming,
-      wireless communication, and machine learning.
-      My work spans C/C++, Rust, Linux Drivers/Yocto Project, real-time device interactions, signal processing,
-      and computer Vision application - with a focus on understanding complex problem statement, translate to user need and turning them into reliable engineering solutions.
+      I design end-to-end systems spanning embedded firmware, backend services, desktop applications, and test platforms—defining the interfaces and data flows that make hardware and software work reliably together.
     </p>
     <div className="about__grid">
       {services.map((service) => <ServiceCard key={service.title} {...service} />)}

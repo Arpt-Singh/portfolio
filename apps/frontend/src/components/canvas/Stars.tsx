@@ -21,7 +21,7 @@ const setupStars: CanvasSetup = ({ canvas, renderer, isActive, fail }) => {
   const geometry = new BufferGeometry();
   geometry.setAttribute("position", new Float32BufferAttribute(positions, 3));
   const material = new PointsMaterial({
-    color: "#f272c8", size: .002, transparent: true, sizeAttenuation: true, depthWrite: false,
+    color: "#2c9eff", size: .002, transparent: true, sizeAttenuation: true, depthWrite: false,
   });
   const points = new Points(geometry, material);
   const group = new Group();

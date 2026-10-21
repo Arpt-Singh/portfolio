@@ -9,7 +9,7 @@ const Hero = () => (
         <div className="hero__text">
           <h1 className="hero__heading">Hi, I'm <span>Arpit</span></h1>
           <p className="hero__description">
-            Connecting hardware and software through embedded systems, analog &amp; digital electronics, wireless communication, and machine learning.
+            I build embedded systems that connect electronics, firmware, wireless devices, and software.
           </p>
         </div>
       </div>

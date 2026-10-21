@@ -27,7 +27,7 @@ const Experience = () => (
   <div className="experience">
     <header className="experience__header">
       <p className="section-subheading">My engineering journey</p>
-      <h2 className="section-heading">Work Experience.</h2>
+      <h2 className="section-heading">Work Experience</h2>
     </header>
     <ol className="experience__timeline">
       {experiences.map((experience, index) => <ExperienceCard key={`experience-${index}`} experience={experience} />)}

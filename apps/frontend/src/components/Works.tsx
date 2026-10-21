@@ -6,7 +6,7 @@ const Works = () => (
   <div className="works">
     <header className="works__header">
       <p className="section-subheading">Research & engineering</p>
-      <h2 className="section-heading">Projects.</h2>
+      <h2 className="section-heading">Projects</h2>
     </header>
     <div className="works__grid">
       {[...projects].reverse().map((project) => (
