@@ -1,13 +1,10 @@
 @use "../styles/mixins";
 
-.navbar { position: fixed; top: 0; z-index: 30; display: flex; align-items: center; width: 100%; padding: var(--space-5) 0; background: transparent; }
-.navbar--scrolled { background: var(--color-primary); }
+.navbar { position: fixed; top: 0; z-index: 30; display: flex; align-items: center; width: 100%; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border); background: var(--color-primary); }
 .navbar__container { @include mixins.container; display: flex; justify-content: space-between; align-items: center; padding-inline: var(--space-4); }
-.navbar__brand { display: flex; min-width: 0; align-items: center; gap: 8px; }
+.navbar__brand { display: flex; min-width: 0; align-items: center; gap: var(--space-3); }
 .navbar__logo { @include mixins.square(44px); flex-shrink: 0; object-fit: contain; }
-.navbar__name { min-width: 0; font-size: clamp(10px, 2.8vw, 14px); font-weight: 700; line-height: 1.5; }
-.navbar__title, .navbar__subtitle { display: block; }
-.navbar__subtitle { font-size: .85em; font-weight: 500; color: var(--color-secondary); }
+.navbar__role { display: none; padding-left: var(--space-3); border-left: 1px solid var(--color-border-muted); color: var(--color-secondary); font-size: var(--font-size-small); white-space: nowrap; }
 .navbar__desktop-links { display: none; gap: 40px; list-style: none; }
 .navbar__item { color: var(--color-secondary); font-size: 16px; font-weight: 500; cursor: pointer; }
 .navbar__item:hover, .navbar__item--active { color: var(--color-text); }
@@ -25,12 +22,13 @@
 .navbar__mobile-links { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; list-style: none; }
 @include mixins.up(sm) {
   .navbar__container { padding-inline: var(--space-6); }
-  .navbar__name { font-size: 18px; }
+  .navbar__role { display: block; }
 }
 @include mixins.up(lg) {
   .navbar__container { padding-inline: var(--space-8); gap: var(--space-6); }
   .navbar__desktop-links { display: flex; flex-shrink: 0; }
-  .navbar__desktop-links .navbar__item { font-size: 18px; }
+  .navbar__desktop-links { gap: var(--space-8); }
+  .navbar__desktop-links .navbar__item { font-size: 15px; }
   .navbar__mobile { display: none; }
 }
 @include mixins.reduced-motion { .navbar__bar { transition: none; } }

@@ -2,35 +2,41 @@ import { employer, experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import "./Experience.scss";
 
-const ExperienceCard = ({ experience }: { experience: (typeof experiences)[number] }) => (
-  <li className="experience__entry">
-    <article className="experience__card">
-      <h3 className="experience__title">{experience.title}</h3>
-      <p className="experience__focus">{experience.focus}</p>
-      <div className="experience__summary">
-        {experience.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </div>
-      <div className="experience__employer">
-        <a href={employer.url} target="_blank" rel="noopener noreferrer"
-          aria-label={`Visit ${employer.name} (opens in a new tab)`}>
-          <img src={employer.logo} alt="Medtronic" width={40} height={38} loading="lazy" />
-        </a>
-      </div>
-    </article>
-    <p className="experience__date">{experience.date}</p>
-  </li>
-);
-
 const Experience = () => (
   <div className="experience">
-    <header className="experience__header">
-      <p className="section-subheading">My engineering journey</p>
+    <header>
+      <p className="section-subheading">My Engineering Journey</p>
       <h2 className="section-heading">Work Experience</h2>
     </header>
+    <a href={employer.url} target="_blank" rel="noopener noreferrer" className="experience__employer"
+      aria-label={`${employer.name} (opens in a new tab)`}>
+      <span className="experience__employer-logo">
+        <img src={employer.logo} alt="" width={40} height={38} loading="lazy" />
+      </span>
+      <span>{employer.name}</span>
+    </a>
     <ol className="experience__timeline">
-      {experiences.map((experience, index) => <ExperienceCard key={`experience-${index}`} experience={experience} />)}
+      {experiences.map((experience) => (
+        <li key={experience.date} className="experience__entry">
+          <p className="experience__date">{experience.date}</p>
+          <div className="experience__content">
+            <h3 className="experience__title">{experience.title}</h3>
+            {experience.areas.map((area) => (
+              <section key={area.focus} className="experience__area">
+                <h4 className="experience__focus">{area.focus}</h4>
+                <ul className="experience__points">
+                  {area.points.map((point) => <li key={point}>{point}</li>)}
+                </ul>
+              </section>
+            ))}
+            <ul className="experience__technologies" aria-label={`${experience.title} technologies`}>
+              {experience.technologies.map((technology) => (
+                <li key={technology} className="experience__technology">{technology}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
     </ol>
   </div>
 );

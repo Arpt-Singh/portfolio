@@ -5,7 +5,7 @@ import "./About.scss";
 const ServiceCard = ({ title, icon, technologies }: (typeof services)[number]) => (
   <article className="about__card">
     <div className="about__card-content">
-      <img src={icon} alt="" className="about__icon" />
+      <img src={icon} alt="" className="about__card-icon" />
       <h3 className="about__card-title">{title}</h3>
       <ul className="about__technologies" aria-label={`${title} technologies`}>
         {technologies.map((technology) => (
@@ -19,14 +19,9 @@ const ServiceCard = ({ title, icon, technologies }: (typeof services)[number]) =
 const About = () => (
   <div className="about">
     <header className="about__header">
-      <p className="section-subheading">Introduction</p>
-      <h2 className="section-heading">Overview</h2>
+      <p className="about__eyebrow">Overview</p>
+      <h2 className="about__heading">What I work on</h2>
     </header>
-    <p className="about__description">
-      I work mostly in Rust, C, TypeScript, and Python. I write RTOS firmware and hardware test rigs, build Tauri +
-      React desktop apps backed by Rust and SQLite, and make the device and desktop talk reliably over Protobuf/gRPC,
-      CAN, and BLE.
-    </p>
     <div className="about__grid">
       {services.map((service) => <ServiceCard key={service.title} {...service} />)}
     </div>

@@ -19,45 +19,24 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Application & Interface Engineering",
+    title: "Full Stack Desktop Application",
     icon: `${import.meta.env.BASE_URL}technology-icons/react.svg`,
-    technologies: ["React", "TypeScript", "HTML", "CSS", "SCSS", "Tailwind CSS", "Zustand", "Tauri", "SQLite", "Diesel ORM", "Redis"],
+    technologies: ["React", "TypeScript", "Tauri", "Rust", "SQLite", "gRPC"],
   },
   {
-    title: "Embedded System Design",
+    title: "Embedded Systems Architecture",
     icon: `${import.meta.env.BASE_URL}technology-icons/stmicroelectronics.svg`,
-    technologies: ["C/C++", "STM32", "ESP32-S3", "RTOS", "Embassy", "CAN"],
+    technologies: ["C", "C++", "STM32", "ESP32-S3", "RTOS", "CAN"],
   },
   {
-    title: "Rust & Systems Programming",
-    icon: `${import.meta.env.BASE_URL}technology-icons/rust.svg`,
-    technologies: ["Rust", "IPC", "Protobuf/gRPC", "Async", "File I/O", "Protocol Design"],
-  },
-  {
-    title: "Embedded Linux & OS Architecture",
-    icon: `${import.meta.env.BASE_URL}technology-icons/linux.svg`,
-    technologies: ["Linux", "Yocto", "OpenEmbedded", "BitBake", "Weston", "systemd"],
-  },
-  {
-    title: "Machine Learning & Computer Vision",
-    icon: `${import.meta.env.BASE_URL}technology-icons/pytorch.svg`,
-    technologies: ["Python", "PyTorch", "Deep Learning", "Image Processing", "U-Net", "MobileNet", "CNN"],
-  },
-  {
-    title: "Wireless Communication & Signal Processing",
+    title: "Wireless Technology",
     icon: `${import.meta.env.BASE_URL}technology-icons/bluetooth.svg`,
-    technologies: ["BLE ", "RSSI", "CAN", "Filtering", "Hysteresis"],
-  },
-
-  {
-    title: "Engineering Automation & Quality",
-    icon: `${import.meta.env.BASE_URL}technology-icons/playwright.svg`,
-    technologies: ["Azure DevOps", "Playwright", "SonarQube", "Vitest"],
+    technologies: ["BLE", "Wi-Fi", "Signal Processing"],
   },
   {
-    title: "Physics, Electronics & Control",
-    icon: `${import.meta.env.BASE_URL}technology-icons/quantum-state.svg`,
-    technologies: ["Analog Electronics", "Signal Analysis", "Electromagnetics", "Sensor"],
+    title: "Machine Learning & Automation",
+    icon: `${import.meta.env.BASE_URL}technology-icons/pytorch.svg`,
+    technologies: ["Python", "PyTorch", "CNN", "Playwright"],
   },
 ];
 
@@ -67,95 +46,74 @@ export const employer = {
   logo: medtronicLogo,
 };
 
+const githubProfileUrl = "https://github.com/Arpt-Singh";
+
 const experiences = [
   {
     title: "Enterprise Software Engineer - I",
-    focus: "FEBE - Frontend & Backend Engineering",
-    date: "January 2026 - Present",
-    paragraphs: [
-      "I develop hardware-integrated desktop applications using React, TypeScript, and Tauri, with Rust services and SQLite persistence. I design protobuf-based gRPC APIs and streaming event flows that connect the user interface to backend services, CAN-connected peripherals, and embedded controllers for device control, telemetry, self-tests, updates, and system notifications."
+    date: "Aug 2024 — Present",
+    areas: [
+      {
+        focus: "Full-Stack Desktop Applications",
+        points: [
+          "Build desktop apps that control hardware, using React, TypeScript, Tauri, Rust and SQLite.",
+          "Design gRPC APIs with Protobuf and streaming events between the app, backend services and CAN-connected devices.",
+        ],
+      },
+      {
+        focus: "Machine Learning Research",
+        points: [
+          "Built a probabilistic generative model with one teammate to create synthetic biomedical signals for testing algorithms, evaluating signal filters, and classifying false signals.",
+          "Prepared the data, trained the model and compared its output with real signals. Selected for the Medtronic U.S. science and technology conference.",
+        ],
+      },
+      {
+        focus: "Embedded Systems",
+        points: [
+          "Designed an embedded system with firmware, Rust host services and Python test clients.",
+          "Used Protobuf and gRPC contracts and shared CMake modules to keep device control, communication and testing separate.",
+        ],
+      },
     ],
-  },
-  {
-    title: "Enterprise Software Engineer - I",
-    focus: "Applied AI/ML & Research",
-    date: "April 2025 - January 2026",
-    paragraphs: [
-      "On a two-person team, I contributed to developing a probabilistic generative model for analyzing complex biomedical signals, using synthetic data generation to evaluate classification performance. I worked with PyTorch and MATLAB to preprocess data, train the model, and compare generated signals against reference data. The research was selected for presentation at a U.S. science and technology conference."
-    ],
-  },
-  {
-    title: "Enterprise Software Engineer - I",
-    focus: "Embedded Systems Design & Technical Leadership",
-    date: "August 2024 - April 2025",
-    paragraphs: [
-      "I built an embedded system Architecture across firmware, Rust host services, and Python test clients. Protobuf/gRPC contracts and reusable CMake modules kept device control, communication, and test logic separate.",
-    ],
+    technologies: ["Rust", "React", "Tauri", "gRPC", "SQLite", "Embedded C", "CMake", "Python", "PyTorch", "MATLAB"],
   },
   {
     title: "Research and Development Intern",
-    focus: "Embedded Research & Experimental Analysis",
-    date: "November 2023 - August 2024",
-    paragraphs: [
-      "I designed Hall-effect sensing data acquisition system and integrated it with NI-DAQmx data acquisition using LabVIEW and MATLAB for embedded test. I worked on measurement software and experimental validation; the research was accepted for presentation at a U.S. science and technology event.",
+    date: "Nov 2023 — Aug 2024",
+    areas: [
+      {
+        focus: "Embedded Research & Experimental Analysis",
+        points: [
+          "Designed a Hall-effect sensing data-acquisition system and integrated it with NI-DAQmx, LabVIEW and MATLAB for embedded test.",
+          "Worked on measurement software and experimental validation. Accepted for presentation at the Medtronic U.S. science and technology event.",
+        ],
+      },
     ],
+    technologies: ["LabVIEW", "MATLAB", "NI-DAQmx"],
   },
 ];
 
-const projects = [
+// Add `repoUrl` for public repositories. Proprietary work never shows a repository icon or link.
+type Project = { name: string; summary: string; technologies: string[]; repoUrl?: string; proprietary?: boolean };
+
+const projects: Project[] = [
   {
-    name: "Oscillatory Motion Analysis",
-    summary: [
-      "Designed a measurement and analysis pipeline to characterize oscillatory motor motion beyond speed, including acceleration, torque, and power.",
-      "Integrated NI-DAQmx acquisition with LabVIEW and MATLAB processing, separating signal capture, filtering, and acceleration estimation, then validating results against experimental measurements.",
-      "Research accepted for presentation at a U.S. science and technology event.",
-    ],
-    technologies: ["LabVIEW", "MATLAB", "NI-DAQmx", "Signal processing"],
+    name: "Desktop Applications for Embedded Systems",
+    summary: "React and TypeScript desktop apps send typed Tauri commands to Rust services. SQLite persists session-based configuration with typed data structures whose properties are applied at runtime. Python test clients use Protobuf and gRPC to connect host services with Embedded C firmware on an RTOS.",
+    technologies: ["React", "Tauri", "Rust", "gRPC", "Embedded C"],
   },
   {
-    name: "Modular Embedded Systems Architecture",
-    summary: [
-      "Architected a reusable, layered test platform separating Python test clients, Rust host services, and Embedded C device control.",
-      "Defined Protobuf/gRPC interfaces, RTOS task boundaries, and shared CMake modules to support consistent communication and real-time behavior across multiple test applications. Developed a reusable framework separating test software, communication services, and embedded control.",
-    ],
-    technologies: ["Embedded C", "CMake", "RTOS", "Protobuf"],
+    name: "Desktop Touch Gesture Classifier",
+    summary: "A Tauri desktop app handles multi-touch input from a touchscreen display. A Rust service analyzes touch motion, classifies gestures, and streams results over gRPC. The UI uses these results to distinguish intended gestures from pinch-to-zoom and suppress unwanted zoom, keeping gesture analysis separate from display controls.",
+    technologies: ["Rust", "gRPC", "Tauri"],
   },
   {
-    name: "Model-Based Sensor Calibration",
-    summary: [
-      "Developed a sensor-calibration workflow linking experimental data, statistical analysis, mathematical modeling, and embedded software. Collaborated with a technical fellow to model nonlinear sensor response and implement software compensation for consistent input-output behavior.",
-      "Research selected and presented at a U.S. science and technology conference.",
-    ],
-    technologies: ["Mathematical modeling", "Statistical analysis", "Embedded software"],
-  },
-  {
-    name: "Generative ML for Signal Evaluation",
-    summary: [
-      "Designed a reproducible synthetic-signal pipeline to augment evaluation data for signal-classification research.",
-      "In a two-person team, structured workflows for preprocessing, model training, signal generation, and statistical comparison against reference data using Python, PyTorch, and MATLAB.",
-      "Research selected and presented at a U.S. science and technology conference.",
-    ],
-    technologies: ["Python", "PyTorch", "Machine learning", "Synthetic signal generation"],
-  },
-  {
-    name: "Touch-Classification Microservice Architecture",
-    summary: [
-      "Designed a Rust service that analyzes multi-touch motion and distinguishes intentional gestures from pinch-to-zoom input.",
-      "Integrated the classifier with a Tauri desktop application through gRPC, separating gesture analysis from GUI behavior. The frontend uses classifier results to suppress unwanted zoom.",
-    ],
-    technologies: ["gRPC", "Linear algebra", "Touch-input processing", "Gesture classification"],
-  },
-  {
-    name: "Full-Stack Desktop Systems Architecture",
-    summary: [
-      "Architected desktop workflows across React, Rust/Tauri, and SQLite, keeping configuration, runtime state, and persisted data consistent.",
-      "Defined clear boundaries between reusable UI components, Zustand state, typed Tauri commands, and Diesel persistence.",
-      "Implemented recursive change detection, schema migrations, and shared control rules.",
-      "Validated state transitions and numerical edge cases through regression tests and hardware evaluation.",
-    ],
-    technologies: ["React", "TypeScript", "Rust", "Tauri", "Zustand", "SQLite", "Diesel", "Vitest", "SCSS", "SVG", "JSON", "PyVision", "Azure DevOps"],
+    name: "Machine Learning & Probabilistic Modeling",
+    summary: "Probabilistic models generate signal data for algorithm testing, signal-filter evaluation, and false-signal classification. ML-based sensor calibration covers data preparation, validation against reference signals, and calibration in embedded software. Methods are Medtronic proprietary.",
+    technologies: ["Machine Learning", "Probabilistic Modeling", "Signal Processing"],
+    proprietary: true,
   },
 ];
 
-export { services, experiences, projects };
+export { services, experiences, projects, githubProfileUrl };
 import medtronicLogo from "../assets/medtronic-logo.png";

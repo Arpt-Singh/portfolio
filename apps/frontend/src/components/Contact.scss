@@ -2,19 +2,19 @@
 
 .contact { overflow: hidden; }
 .contact__panel { overflow: hidden; border: 1px solid var(--color-border); border-radius: var(--radius-large); background: var(--color-tertiary); }
-.contact__intro { padding: var(--space-6); }
-.contact__heading { margin-top: 8px; }
-.contact__description { margin-top: 20px; max-width: 576px; font-size: 16px; line-height: 28px; color: var(--color-copy); }
-.contact__details { margin-top: 36px; }
-.contact__label { margin-bottom: 12px; color: var(--color-text); font-size: var(--font-size-small); font-weight: 400; }
+.contact__intro { padding: var(--space-5); }
+.contact__heading { margin-top: 4px; }
+.contact__description { margin-top: var(--space-3); max-width: 576px; @include mixins.body-copy; }
+.contact__details { margin-top: var(--space-5); }
+.contact__label { margin-bottom: var(--space-2); color: var(--color-text); font-size: var(--font-size-small); font-weight: 400; }
 .contact__email { display: inline-block; max-width: 100%; word-break: break-all; font-size: 15px; font-weight: 500; color: var(--color-text); text-decoration: underline; text-decoration-color: currentColor; text-underline-offset: var(--space-1); }
-.contact__socials { display: flex; gap: var(--space-3); margin-top: var(--space-5); list-style: none; }
-.contact__social { display: inline-flex; align-items: center; justify-content: center; @include mixins.square(40px); border: 1px solid var(--color-border); border-radius: 50%; }
+.contact__socials { display: flex; gap: var(--space-3); margin-top: var(--space-3); list-style: none; }
+.contact__social { display: inline-flex; align-items: center; justify-content: center; @include mixins.square(36px); border: 1px solid var(--color-border); border-radius: 50%; }
 .contact__social--github { color: #fff; }
 .contact__social--linkedin { color: #0A66C2; }
 .contact__social-icon { @include mixins.square(20px); }
-.contact__topics { @include mixins.small-copy; margin-top: var(--space-5); color: var(--color-secondary); }
+.contact__topics { @include mixins.body-copy; margin-top: var(--space-3); }
 @include mixins.up(sm) {
-  .contact__intro { padding: var(--space-10); }
+  .contact__intro { padding: var(--space-8); }
   .contact__email { font-size: 17px; }
 }

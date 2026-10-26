@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { navLinks } from "../constants";
@@ -8,27 +8,9 @@ import "./Navbar.scss";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <nav
-      className={`navbar${scrolled ? " navbar--scrolled" : ""}`}
-    >
+    <nav className="navbar">
       <div className="navbar__container">
         <Link
           to='/'
@@ -38,11 +20,8 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className="navbar__logo" />
-          <p className="navbar__name">
-            <span className="navbar__title">Arpit | Embedded Software Engineer - I</span>
-            <span className="navbar__subtitle">@NITian</span>
-          </p>
+          <img src={logo} alt='Arpit' className="navbar__logo" />
+          <span className="navbar__role">Embedded Software Engineer</span>
         </Link>
 
         <ul className="navbar__desktop-links">

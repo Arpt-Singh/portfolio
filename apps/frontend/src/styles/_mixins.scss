@@ -63,7 +63,15 @@ $breakpoints: (
   color: var(--color-secondary);
 }
 
-@mixin small-copy {
-  font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
+
+// Shared body text; matches the hero description.
+@mixin body-copy {
+  color: var(--color-copy);
+  font-size: 16px;
+  line-height: 26px;
+
+  @include up(sm) {
+    font-size: 18px;
+    line-height: 30px;
+  }
 }

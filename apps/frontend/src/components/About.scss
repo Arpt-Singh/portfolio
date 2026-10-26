@@ -1,15 +1,21 @@
 @use "../styles/mixins";
 
-.about__description { margin-top: var(--space-4); width: 100%; max-width: 768px; color: var(--color-copy); font-size: 19px; line-height: 32px; }
-.about__grid { display: grid; grid-auto-rows: 1fr; gap: var(--space-6); margin-top: 80px; }
+.about__eyebrow { color: var(--color-copy); font-size: 16px; font-weight: 500; letter-spacing: 0.12em; line-height: 26px; text-transform: uppercase; }
+.about__heading { margin-top: var(--space-2); color: var(--color-text); font-size: clamp(30px, 8vw, 40px); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; }
+.about__grid { display: grid; @include mixins.columns(2); grid-auto-rows: 1fr; gap: var(--space-3); margin-top: var(--space-6); }
 .about__card { min-width: 0; border-radius: var(--radius-card); }
-.about__card-content { display: flex; flex-direction: column; align-items: center; gap: var(--space-5); height: 100%; min-height: 360px; padding: var(--space-5); border-radius: var(--radius-card); background: var(--color-tertiary); }
-.about__icon { @include mixins.square(var(--icon-size)); object-fit: contain; }
-.about__card-title { font-size: var(--font-size-card-title); font-weight: 600; text-align: center; }
-.about__technologies { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); list-style: none; }
+.about__card-content { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); height: 100%; padding: var(--space-4) var(--space-3); border-radius: var(--radius-card); background: var(--color-tertiary); }
+.about__card-icon { @include mixins.square(40px); object-fit: contain; }
+.about__card-title { font-size: 15px; font-weight: 600; line-height: 1.35; text-align: center; overflow-wrap: anywhere; }
+.about__technologies { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-1); list-style: none; }
 .about__technology { @include mixins.badge; border: 1px solid var(--color-border-muted); color: var(--color-secondary); }
 @include mixins.up(sm) {
-  .about__description { font-size: 21px; line-height: 36px; }
-  .about__grid { @include mixins.columns(2); }
+  .about__eyebrow { font-size: 18px; line-height: 30px; }
+  .about__heading { font-size: 44px; }
+  .about__grid { gap: var(--space-6); margin-top: var(--space-10); }
+  .about__card-content { gap: var(--space-5); padding: var(--space-5); }
+  .about__card-icon { @include mixins.square(var(--icon-size)); }
+  .about__card-title { font-size: var(--font-size-card-title); }
+  .about__technologies { gap: var(--space-2); }
 }
-@include mixins.up(lg) { .about__grid { @include mixins.columns(4); } }
+@include mixins.up(lg) { .about__heading { font-size: clamp(40px, 4vw, 52px); } }
