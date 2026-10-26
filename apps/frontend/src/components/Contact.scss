@@ -13,7 +13,7 @@
 .contact__social--github { color: #fff; }
 .contact__social--linkedin { color: #0A66C2; }
 .contact__social-icon { @include mixins.square(20px); }
-.contact__topics { min-width: 0; @include mixins.body-copy; margin-top: var(--space-3); overflow-wrap: break-word; word-break: normal; }
+.contact__topics { display: grid; gap: var(--space-1); min-width: 0; @include mixins.body-copy; margin-top: var(--space-3); list-style: none; }
 @include mixins.up(sm) {
   .contact__intro { padding: var(--space-8); }
   .contact__email { font-size: 17px; }

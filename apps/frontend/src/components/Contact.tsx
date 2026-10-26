@@ -33,7 +33,11 @@ const Contact = () => (
               </a>
             </li>
           </ul>
-          <p className="contact__topics">Embedded Systems Design / Software System Design / Applied Research</p>
+          <ul className="contact__topics" aria-label="Areas of interest">
+            <li>Embedded Systems Design</li>
+            <li>Software System Design</li>
+            <li>Applied Research</li>
+          </ul>
         </div>
       </div>
     </div>
