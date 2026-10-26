@@ -23,9 +23,9 @@ const About = () => (
       <h2 className="section-heading">Overview</h2>
     </header>
     <p className="about__description">
-      Most of my work is in Rust, C, TypeScript and Python. On the device side, I write RTOS firmware and build test
-      rigs for hardware. On the desktop side, I build Tauri apps with React, backed by Rust services and SQLite. A lot
-      of the real work is getting the two sides to talk reliably over Protobuf/gRPC, CAN, or Bluetooth LE.
+      I work mostly in Rust, C, TypeScript, and Python. I write RTOS firmware and hardware test rigs, build Tauri +
+      React desktop apps backed by Rust and SQLite, and make the device and desktop talk reliably over Protobuf/gRPC,
+      CAN, and BLE.
     </p>
     <div className="about__grid">
       {services.map((service) => <ServiceCard key={service.title} {...service} />)}

@@ -8,18 +8,24 @@
 .hero__heading { margin-top: 8px; font-size: 40px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
 .hero__heading span { color: var(--color-text); }
 .hero__description { max-width: 34em; margin-top: var(--space-4); font-size: 16px; line-height: 28px; color: var(--color-copy); }
-.hero__image { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; justify-self: end; }
+.hero__image { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; justify-self: end;
+  $fade-x: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  $fade-y: linear-gradient(to bottom, transparent, #000 18%, #000 78%, transparent);
+  mask-image: $fade-x, $fade-y; mask-composite: intersect;
+  -webkit-mask-image: $fade-x, $fade-y; -webkit-mask-composite: source-in;
+  filter: saturate(0.9) brightness(0.92);
+}
 @include mixins.up(xs) { .hero__heading { font-size: 50px; } }
 @include mixins.up(sm) {
   .hero__intro { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--space-3); padding: 128px 24px 0; }
-  .hero__image { width: auto; max-height: 200px; }
+  .hero__image { max-width: min(100%, calc(200px * 1325 / 767)); }
   .hero__heading { font-size: 56px; }
   .hero__description { font-size: 18px; line-height: 30px; }
 }
 @include mixins.up(lg) {
   .hero { margin-bottom: calc(-1 * var(--space-6)); }
   .hero__intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: var(--space-8); padding: 164px 32px 0; }
-  .hero__image { width: auto; max-width: 100%; max-height: 340px; margin: 0; justify-self: end; }
+  .hero__image { max-width: min(100%, calc(340px * 1325 / 767)); margin: 0; justify-self: end; }
   .hero__copy { max-width: 560px; }
   .hero__heading { margin-top: 0; font-size: clamp(40px, 4vw, 56px); }
   .hero__shade { background: radial-gradient(ellipse 460px 290px at 100px 200px, rgb(var(--color-primary-rgb) / 85%) 20%, rgb(var(--color-primary-rgb) / 50%) 55%, transparent 100%); }
