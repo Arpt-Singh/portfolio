@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="940" viewBox="170 140 1030 970" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="170 150 920 920" role="img" aria-labelledby="title desc">
   <title id="title">Neon Circuit A Emblem</title>
-  <desc id="desc">Vector recreation of a neon letter A with an orbital ring, electronic circuits, and cyan to violet gradients on a transparent background.</desc>
+  <desc id="desc">Neon letter A with cyan to violet gradients on a dark navy rounded background.</desc>
   <defs>
     <linearGradient id="metal" x1="430" y1="420" x2="920" y2="880" gradientUnits="userSpaceOnUse">
       <stop stop-color="#68ffff"/>
       <stop offset=".28" stop-color="#00b8ff"/>
-      <stop offset=".53" stop-color="#2441ed"/>
-      <stop offset=".79" stop-color="#851dff"/>
+      <stop offset=".53" stop-color="#6495ff"/>
+      <stop offset=".79" stop-color="#b07aff"/>
       <stop offset="1" stop-color="#d244ff"/>
     </linearGradient>
     <linearGradient id="left" x1="360" y1="610" x2="555" y2="795" gradientUnits="userSpaceOnUse">
       <stop stop-color="#68ffff"/>
       <stop offset=".42" stop-color="#00c9ff"/>
-      <stop offset=".73" stop-color="#194cff"/>
+      <stop offset=".73" stop-color="#6495ff"/>
       <stop offset="1" stop-color="#b13aff"/>
     </linearGradient>
     <linearGradient id="rim" x1="397" y1="360" x2="975" y2="915" gradientUnits="userSpaceOnUse">
@@ -21,43 +21,14 @@
       <stop offset=".72" stop-color="#4147ff"/>
       <stop offset="1" stop-color="#d455ff"/>
     </linearGradient>
-    <linearGradient id="orbit" x1="580" y1="740" x2="929" y2="512" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3942ff"/>
-      <stop offset=".4" stop-color="#008aff"/>
-      <stop offset=".75" stop-color="#00cfff"/>
-      <stop offset="1" stop-color="#81ffff"/>
-    </linearGradient>
     <linearGradient id="cyan" x1="230" y1="380" x2="950" y2="730" gradientUnits="userSpaceOnUse">
       <stop stop-color="#00edff"/>
       <stop offset=".5" stop-color="#008aff"/>
       <stop offset="1" stop-color="#76eaff"/>
     </linearGradient>
-    <linearGradient id="purple" x1="300" y1="600" x2="330" y2="810" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#245aff"/>
-      <stop offset=".5" stop-color="#a17bff"/>
-      <stop offset="1" stop-color="#7c19ff"/>
-    </linearGradient>
-    <linearGradient id="arc" x1="400" y1="190" x2="860" y2="1000" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#00aaff"/>
-      <stop offset=".12" stop-color="#60ffff"/>
-      <stop offset=".25" stop-color="#008aff"/>
-      <stop offset=".53" stop-color="#6030ff"/>
-      <stop offset=".8" stop-color="#9a13ff"/>
-      <stop offset="1" stop-color="#ed00f5"/>
-    </linearGradient>
     <filter id="glow" x="-35%" y="-35%" width="170%" height="170%" color-interpolation-filters="sRGB">
       <feGaussianBlur stdDeviation="7"/>
     </filter>
-    <filter id="smallGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3"/>
-    </filter>
-    <g id="arcs" fill="none" stroke="url(#arc)" stroke-width="10" stroke-linecap="round">
-      <path d="M411 257 A400 400 0 0 1 834 248"/>
-      <path d="M965 378 A407 407 0 0 1 1021 572"/>
-      <path d="M1016 691 A408 408 0 0 1 968 818"/>
-      <path d="M375 914 A405 405 0 0 0 815 941"/>
-      <path d="M288 826 A402 402 0 0 1 231 549"/>
-    </g>
     <g id="letter">
       <path d="M631 267 996 931 787 905 675 719 721 698 799 895 956 912 609 319Z" fill="url(#metal)" stroke="url(#rim)" stroke-width="5"/>
       <path d="M631 267 821 605 745 658 581 355Z" fill="url(#metal)" stroke="url(#rim)" stroke-width="3"/>
@@ -76,46 +47,8 @@
         <circle cx="913" cy="882" r="11"/>
       </g>
     </g>
-    <g id="electronics" stroke-linecap="round" stroke-linejoin="round">
-      <g fill="none" stroke="url(#cyan)" stroke-width="7">
-        <path d="M327 392 V349 L338 338 H416 L510 433"/>
-        <path d="M295 531 V568 L334 606 H407"/>
-        <path d="M370 448 H393"/>
-        <circle cx="406" cy="448" r="10"/>
-        <path d="M741 378 H829"/>
-        <circle cx="859" cy="378" r="59"/>
-        <path d="M836 341 V416 M839 367 882 329 V265 M839 391 881 421 V458"/>
-        <path d="M929 378 H940 V290"/>
-        <circle cx="940" cy="279" r="10"/>
-        <circle cx="882" cy="471" r="10"/>
-        <path d="M917 625 H969 L981 599 1000 651 1020 599 1039 647 1057 604 1073 637 1080 625 H1118"/>
-        <circle cx="1139" cy="625" r="11"/>
-      </g>
-      <path d="M871 399 884 424 856 418Z" fill="#00caff"/>
-      <circle cx="382" cy="287" r="12" fill="#098eff" stroke="#57daff" stroke-width="1.5"/>
-      <g stroke="url(#cyan)" fill="none" stroke-width="7">
-        <rect x="249" y="400" width="94" height="97" rx="7"/>
-        <path d="M263 377 V389 M279 377 V389 M295 377 V389 M312 377 V389 M328 377 V389 M263 508 V520 M279 508 V520 M295 508 V520 M312 508 V520 M328 508 V520 M229 414 H239 M229 431 H239 M229 449 H239 M229 466 H239 M229 483 H239 M354 414 H364 M354 431 H364 M354 449 H364 M354 466 H364 M354 483 H364"/>
-        <rect x="265" y="416" width="62" height="65" rx="1" fill="#07346b" fill-opacity=".4" stroke-width="2"/>
-      </g>
-      <g stroke="url(#purple)" stroke-width="7" fill="none">
-        <circle cx="318" cy="633" r="9"/>
-        <path d="M318 645 V696 M284 701 H351 M284 725 H351 M318 729 V769 M298 773 H337 M306 785 H329 M314 798 H321"/>
-      </g>
-      <g stroke="#61efff" stroke-width="6" fill="none">
-        <path d="M504 611 H575 M648 611 H705 M638 570 V650"/>
-        <path d="M575 570 630 610 575 650Z" fill="#00aeff"/>
-      </g>
-    </g>
-    <path id="ring" d="M795 527 C861 499 939 496 955 526 C984 580 852 667 693 711 C598 737 514 743 460 735 C574 732 709 689 816 630 C877 596 926 553 916 534 C907 514 854 510 797 531Z"/>
   </defs>
-  <use href="#arcs" filter="url(#glow)" opacity=".65"/>
-  <use href="#arcs"/>
-  <use href="#electronics" filter="url(#smallGlow)" opacity=".7"/>
-  <use href="#electronics"/>
-  <use href="#letter" filter="url(#glow)" opacity=".65"/>
+  <rect x="178" y="158" width="904" height="904" rx="170" fill="#030c26" stroke="#25426b" stroke-width="14"/>
+  <use href="#letter" filter="url(#glow)" opacity=".35"/>
   <use href="#letter"/>
-  <use href="#ring" fill="#00aaff" filter="url(#glow)" opacity=".8"/>
-  <use href="#ring" fill="url(#orbit)" stroke="#37daff" stroke-width="2"/>
-  <path d="M473 735 C618 726 787 664 894 580 C922 558 936 535 917 522" fill="none" stroke="#56ffff" stroke-width="2.5" opacity=".8"/>
 </svg>
