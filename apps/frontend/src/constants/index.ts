@@ -68,7 +68,7 @@ const experiences = [
         ],
       },
       {
-        focus: "Embedded Systems",
+        focus: "Embedded Systems Design",
         points: [
           "Designed an embedded system with firmware, Rust host services and Python test clients.",
           "Used Protobuf and gRPC contracts and shared CMake modules to keep device control, communication and testing separate.",
