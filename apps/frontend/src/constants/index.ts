@@ -51,38 +51,43 @@ const githubProfileUrl = "https://github.com/Arpt-Singh";
 type Experience = {
   title: string;
   date: string;
-  areas: { focus?: string; points: string[] }[];
+  areas: { label?: string; focus?: string; points: string[] }[];
   technologies: string[];
 };
 
 const experiences: Experience[] = [
   {
-    title: "Enterprise Software Engineer - I",
+    title: "Enterprise Software Engineer",
     date: "Aug 2024 — Present",
     areas: [
       {
-        focus: "Full-Stack Desktop Applications",
+        label: "01 Application layer",
         points: [
-          "Build desktop apps that control hardware, using React, TypeScript, Tauri, Rust and SQLite.",
-          "Design gRPC APIs with Protobuf and streaming events between the app, backend services and CAN-connected devices.",
+          "Built the React and TypeScript UI as a thin client over typed Tauri commands, keeping device logic out of the frontend.",
         ],
       },
       {
-        focus: "Machine Learning Research",
+        label: "02 Service layer",
         points: [
-          "Built a probabilistic generative model with one teammate to create synthetic biomedical signals for testing algorithms, evaluating signal filters, and classifying false signals.",
-          "Prepared the data, trained the model and compared its output with real signals. Selected for the Medtronic U.S. science and technology conference.",
+          "Built Rust services with Tonic gRPC APIs over Protobuf contracts, plus SQLite migrations and application state management.",
+          "Bridged the application to the controller over FDCAN.",
         ],
       },
       {
-        focus: "Embedded Systems Design",
+        label: "03 Controller layer",
         points: [
-          "Designed an embedded system with firmware, Rust host services and Python test clients.",
-          "Used Protobuf and gRPC contracts and shared CMake modules to keep device control, communication and testing separate.",
+          "Implemented sensor and peripheral state machines and the FDCAN interface to the system controller.",
+        ],
+      },
+      {
+        label: "04 Machine learning",
+        points: [
+          "Developed a probabilistic generative model with a teammate to create synthetic biomedical signals.",
+          "Prepared training data and compared generated signals with reference data to evaluate model output.",
         ],
       },
     ],
-    technologies: ["Rust", "React", "Tauri", "gRPC", "SQLite", "Embedded C", "CMake", "Python", "PyTorch", "MATLAB"],
+    technologies: ["React", "TypeScript", "Rust", "Tauri", "gRPC", "SQLite", "Embedded C", "Python", "PyTorch"],
   },
   {
     title: "Research and Development Intern",
@@ -90,8 +95,8 @@ const experiences: Experience[] = [
     areas: [
       {
         points: [
-          "Designed a Hall-effect sensing data-acquisition system and integrated it with NI-DAQmx, LabVIEW and MATLAB for embedded test.",
-          "Worked on measurement software and experimental validation. Accepted for presentation at the Medtronic U.S. science and technology event.",
+          "Built a Hall-effect sensing data-acquisition system with NI-DAQmx, LabVIEW and MATLAB.",
+          "Supported experimental validation; accepted for the Medtronic U.S. science and technology event.",
         ],
       },
     ],

@@ -23,6 +23,7 @@ const Experience = () => (
             <h3 className="experience__title">{experience.title}</h3>
             {experience.areas.map((area, index) => (
               <section key={`${experience.date}-${index}`} className="experience__area">
+                {area.label && <p className="experience__label">{area.label}</p>}
                 {area.focus && <h4 className="experience__focus">{area.focus}</h4>}
                 <ul className="experience__points">
                   {area.points.map((point) => <li key={point}>{point}</li>)}

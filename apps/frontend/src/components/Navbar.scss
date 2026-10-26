@@ -1,15 +1,15 @@
 @use "../styles/mixins";
 
-.navbar { position: fixed; top: 0; z-index: 30; display: flex; align-items: center; width: 100%; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border); background: var(--color-primary); }
+.navbar { position: fixed; top: 0; z-index: 30; display: flex; align-items: center; width: 100%; padding: var(--space-2) 0; border-bottom: 1px solid var(--color-border); background: var(--color-primary); }
 .navbar__container { @include mixins.container; display: flex; justify-content: space-between; align-items: center; padding-inline: var(--space-4); }
-.navbar__brand { display: flex; min-width: 0; align-items: center; gap: var(--space-3); }
-.navbar__logo { @include mixins.square(44px); flex-shrink: 0; object-fit: contain; }
-.navbar__role { min-width: 0; padding-left: var(--space-3); border-left: 1px solid var(--color-border-muted); color: var(--color-secondary); font-size: 12px; line-height: 1.3; }
+.navbar__brand { display: flex; min-width: 0; align-items: center; gap: var(--space-2); }
+.navbar__logo { @include mixins.square(40px); flex-shrink: 0; object-fit: contain; }
+.navbar__role { min-width: 0; padding-left: var(--space-2); border-left: 1px solid var(--color-border-muted); color: var(--color-secondary); font-size: 11px; line-height: 1.3; opacity: 0.85; }
 .navbar__desktop-links { display: none; gap: 40px; list-style: none; }
 .navbar__item { color: var(--color-secondary); font-size: 16px; font-weight: 500; cursor: pointer; }
 .navbar__item:hover, .navbar__item--active { color: var(--color-text); }
-.navbar__mobile { display: flex; flex-shrink: 0; justify-content: flex-end; align-items: center; margin-left: 12px; }
-.navbar__toggle { @include mixins.flex-center; @include mixins.square(44px); position: relative; padding: 0; border: 1px solid var(--color-border-muted); border-radius: var(--radius-small); }
+.navbar__mobile { display: flex; flex-shrink: 0; justify-content: flex-end; align-items: center; margin-left: var(--space-4); }
+.navbar__toggle { @include mixins.flex-center; @include mixins.square(40px); position: relative; padding: 0; border: 1px solid var(--color-border-muted); border-radius: var(--radius-small); }
 .navbar__hamburger { position: relative; display: block; width: 24px; height: 20px; }
 .navbar__bar { position: absolute; left: 0; width: 24px; height: 2px; border-radius: var(--radius-pill); background: currentColor; transition: transform var(--duration-normal), opacity var(--duration-normal); }
 .navbar__bar:nth-child(1) { top: 0; }
