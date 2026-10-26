@@ -48,7 +48,14 @@ export const employer = {
 
 const githubProfileUrl = "https://github.com/Arpt-Singh";
 
-const experiences = [
+type Experience = {
+  title: string;
+  date: string;
+  areas: { focus?: string; points: string[] }[];
+  technologies: string[];
+};
+
+const experiences: Experience[] = [
   {
     title: "Enterprise Software Engineer - I",
     date: "Aug 2024 — Present",
@@ -82,7 +89,6 @@ const experiences = [
     date: "Nov 2023 — Aug 2024",
     areas: [
       {
-        focus: "Embedded Research & Experimental Analysis",
         points: [
           "Designed a Hall-effect sensing data-acquisition system and integrated it with NI-DAQmx, LabVIEW and MATLAB for embedded test.",
           "Worked on measurement software and experimental validation. Accepted for presentation at the Medtronic U.S. science and technology event.",
