@@ -13,8 +13,9 @@
 .experience__title { margin-top: var(--space-2); color: var(--color-text); font-size: 22px; font-weight: 600; line-height: 30px; }
 .experience__area { margin-top: var(--space-5); }
 .experience__focus { min-width: 0; color: var(--color-text); font-size: 16px; font-weight: 500; line-height: 26px; overflow-wrap: normal; word-break: normal; hyphens: none; }
-.experience__points { display: grid; gap: var(--space-2); max-width: 52em; margin-top: var(--space-2); padding-left: var(--space-4); }
-.experience__points li { @include mixins.body-copy; }
+.experience__content, .experience__area, .experience__points { min-width: 0; }
+.experience__points { display: grid; gap: var(--space-2); width: 100%; max-width: 52em; margin-top: var(--space-2); padding-left: var(--space-4); }
+.experience__points li { min-width: 0; overflow-wrap: anywhere; @include mixins.body-copy; }
 .experience__technologies { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); margin-top: var(--space-5); list-style: none; }
 .experience__technology { @include mixins.badge; border: 1px solid var(--color-border-muted); }
 @include mixins.up(sm) {
